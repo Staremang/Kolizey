@@ -832,7 +832,8 @@ html {
   }
 }
 @media (min-width: 1230px) {
-  .container-l {
+  .container-l,
+  .container-xl {
     max-width: 1200px;
   }
 }
@@ -2557,6 +2558,7 @@ body {
   padding: 67px 14px 57px;
   line-height: 16px;
   border-bottom: 3px solid transparent;
+  max-height: 143px;
 }
 .menu__link:hover,
 .menu__link.active {
@@ -2841,7 +2843,7 @@ body {
   top: -78px;
 }
 .step__percent {
-  background: url(/img/percent.png) no-repeat;
+  background: url(../img/percent.png) no-repeat;
   background-size: contain;
   position: absolute;
   width: 226px;
@@ -2921,7 +2923,7 @@ body {
   content: '';
   width: 57px;
   height: 44px;
-  background: url(/img/step-arrow-1.png) no-repeat;
+  background: url(../img/step-arrow-1.png) no-repeat;
   position: absolute;
   left: 161px;
   top: 49px;
@@ -3000,7 +3002,10 @@ body {
   max-width: 100%;
 }
 .section-scheme {
-  padding: 108px 0;
+  padding: 189px 0;
+  background: url(../img/bg-2.png) center no-repeat;
+  background-size: 100% 100%;
+  margin-top: -169px;
 }
 .section-scheme__container {
   position: relative;
@@ -3128,6 +3133,66 @@ body {
     -webkit-box-shadow: 0 0 0 18px rgba(0, 0, 0, 0.1), 0 0 0 9px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 18px rgba(0, 0, 0, 0.1), 0 0 0 9px rgba(0, 0, 0, 0.1);
   }
+}
+.section-programs {
+  padding: 100px 0;
+  margin-top: -36px;
+}
+.programs {
+  margin-top: 52px;
+}
+.programs__item {
+  height: 212px;
+  margin-bottom: 9px;
+  position: relative;
+  overflow: hidden;
+}
+.programs__item_x2 {
+  height: 433px;
+}
+.programs__item_ovarlay {
+  margin-top: -221px;
+}
+.programs__item:hover .programs__bg {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.programs__item:hover .programs__title {
+  color: red;
+}
+.programs__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #656565;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  background-size: cover;
+}
+.programs__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  left: 26px;
+  bottom: 19px;
+}
+.programs .row {
+  margin: 0 -4px;
+}
+.programs .col-md-3,
+.programs .col-md-4,
+.programs .col-md-6,
+.programs .col-md-8,
+.programs .col-md-9 {
+  padding: 0 4px;
 }
 /**/
 /* datepicker */
