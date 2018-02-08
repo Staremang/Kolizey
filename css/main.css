@@ -782,6 +782,12 @@ template {
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Bold'), local('BebasNeueBold'), url('../fonts/BebasNeueBold.woff2') format('woff2'), url('../fonts/BebasNeueBold.woff') format('woff'), url('../fonts/BebasNeueBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 @-ms-viewport {
   width: device-width;
 }
@@ -2364,11 +2370,12 @@ body {
   font-size: 75%;
 }
 .btn {
+  font-family: "Stem", sans-serif;
   text-align: center;
   cursor: pointer;
   border-radius: 0;
   border: 0;
-  color: white;
+  color: #181818;
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -2378,8 +2385,26 @@ body {
   overflow: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  letter-spacing: 1px;
+}
+.btn_orange {
+  background-color: #ffc600;
+  -webkit-box-shadow: 0px 15px 23px 0px rgba(255, 198, 0, 0.4), inset 0px 8px 25px 0px rgba(255, 225, 0, 0.56);
+  box-shadow: 0px 15px 23px 0px rgba(255, 198, 0, 0.4), inset 0px 8px 25px 0px rgba(255, 225, 0, 0.56);
+  font-weight: bold;
+  padding: 17px 32px 16px;
+  letter-spacing: 2px;
   font-size: 12px;
+}
+.btn_orange-border {
+  font-size: 12px;
+  border: 1px solid #ffc600;
+  -webkit-transition: background .3s ease;
+  -o-transition: background .3s ease;
+  transition: background .3s ease;
+  color: white;
+}
+.btn_orange-border:hover {
+  background: #ffc600;
 }
 .btn img {
   margin-right: 10px;
@@ -2389,15 +2414,6 @@ body {
 .btn span {
   vertical-align: middle;
   line-height: 19px;
-}
-.btn_orange-border {
-  border: 1px solid #ffc600;
-  -webkit-transition: background .3s ease;
-  -o-transition: background .3s ease;
-  transition: background .3s ease;
-}
-.btn_orange-border:hover {
-  background: #ffc600;
 }
 .header {
   position: absolute;
@@ -2771,7 +2787,176 @@ body {
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  background: url(../img/bg-1.png) center top no-repeat;
+  background: url(../img/step-bg-2.png) left center no-repeat, url(../img/bg-1.png) center top no-repeat;
+}
+.step-scale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 669px;
+  background: url(../img/step-scale-bg.png) center 100% no-repeat;
+  left: 0;
+  right: 0;
+  margin: 86px auto 0;
+  height: 30px;
+  padding: 7px 7px 6px;
+  border-radius: 15px;
+}
+.step-scale__step {
+  position: relative;
+}
+.step-scale__number {
+  position: absolute;
+  top: -37px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #ffc600;
+}
+.step-scale__pin {
+  background: url(../img/pin.png) no-repeat;
+  width: 17px;
+  height: 17px;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(31, 29, 27, 0.42);
+  box-shadow: 0px 0px 9px 0px rgba(31, 29, 27, 0.42);
+  border-radius: 50%;
+}
+.step {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 52px;
+}
+.step__img {
+  position: absolute;
+  left: -69px;
+  top: -78px;
+}
+.step__percent {
+  background: url(/img/percent.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 226px;
+  height: 196px;
+  top: 33px;
+  left: 143px;
+}
+.step__your-discount {
+  position: absolute;
+  text-transform: uppercase;
+  color: #181818;
+  text-align: right;
+  font-weight: bold;
+  left: 275px;
+  top: 100px;
+}
+.step__discount-text {
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+.step__discount-count {
+  font-size: 56px;
+}
+.step__container {
+  width: 535px;
+  margin-right: 36px;
+  padding: 42px 45px 41px 41px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 11px 0px rgba(31, 29, 27, 0.04);
+  box-shadow: 0px 5px 11px 0px rgba(31, 29, 27, 0.04);
+}
+.step__number {
+  font-size: 14px;
+  color: #f4f4f4;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0px -1px 0px #ffae00;
+  padding: 8px 13px;
+  letter-spacing: 3px;
+  text-align: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffc200), to(#ffd700));
+  background-image: -webkit-linear-gradient(left, #ffc200, #ffd700);
+  background-image: -o-linear-gradient(left, #ffc200, #ffd700);
+  background-image: linear-gradient(to right, #ffc200, #ffd700);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.step__title {
+  font-size: 26px;
+  color: #1c1c1c;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.346;
+}
+.step__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 145px;
+}
+.bonus-text {
+  font-size: 26px;
+  line-height: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+}
+.bonus-text_1 {
+  top: 267px;
+  left: 275px;
+}
+.bonus-text_1:before {
+  content: '';
+  width: 57px;
+  height: 44px;
+  background: url(/img/step-arrow-1.png) no-repeat;
+  position: absolute;
+  left: 161px;
+  top: 49px;
+}
+.bonuses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 46px;
+}
+.bonuses__first-col {
+  width: 500px;
+}
+.bonuses__second-col {
+  width: 320px;
+}
+.bonuses__item {
+  position: relative;
+  margin-left: 26px;
+  color: #181818;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+.bonuses__item:before {
+  content: '';
+  width: 13px;
+  height: 10px;
+  background: url(../img/check-icon.png) no-repeat;
+  position: absolute;
+  left: -26px;
+  top: 4px;
 }
 .section-gallery {
   padding: 157px 0;
@@ -2872,6 +3057,8 @@ body {
   margin: 0;
   overflow-y: scroll;
   max-height: 622px;
+  -webkit-box-shadow: 0 5px 11px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.04);
 }
 .scheme-list__item {
   color: #181818;
