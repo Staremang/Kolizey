@@ -14,7 +14,7 @@
 <body>
 	<header class="header">
 		
-		<div class="container container-xl">
+		<div class="header__container container container-xl">
 			<button class="nav-menu-btn">
 				<span class="nav-menu-btn__icon">
 					<span></span>
@@ -23,7 +23,9 @@
 					<span></span>
 				</span>
 			</button>
-			<div class="header-logo"></div>
+			<div class="header-logo">
+				<img src="img/logo.png" alt="Колизей">
+			</div>
 			<nav class="menu">
 				<a href="#" data-anchor class="menu__link active">Главная</a>
 				<a href="#" data-anchor class="menu__link">Клубные карты</a>
@@ -35,10 +37,10 @@
 			<div class="header-tel-link">
 				<a href="tel:+7(342)233-11-22" class="header-tel-link__number">
 					<span class="header-tel-link__icon"></span>
-					<span class="header-tel-link__tel">+7(342)<span class="orange">233-11-22</span></span>
+					<span class="header-tel-link__tel">+7 (342) <span class="orange">233-11-22</span></span>
 				</a>
 
-				<a href="#" data-popup="callme" class="header-tel-link__order">Заказать звонок</a>
+				<a href="#" data-popup="callme" class="header-tel-link__order btn btn_orange-border">Заказать звонок</a>
 			</div>
 		</div>
 		
@@ -53,23 +55,103 @@
 
 
 	<div class="section-hero" id="hero">
-<!--		<video src="video/hero-bg.mp4" muted loop autoplay class="section-hero__video"></video>-->
+		<video src="video/hero-bg.mp4" muted loop autoplay class="section-hero__video"></video>
 <!--		<div class="section-hero__video-overlay"></div>-->
 		
 		<div class="section-hero__block">
 			<h1 class="section-hero__description">СОЗДАЙТЕ ВАШУ ПЕРСОНАЛЬНУЮ ФИТНЕС-КАРТУ И ПОЛУЧИТЕ НА НЕЕ <span class="orange">СКИДКУ 10 000 РУБЛЕЙ</span></h1>
-<!--
-			<div class="section-hero__logo">
-				<img src="img/logo.svg" alt="BAR VR">
-			</div>
--->
-			<div class="section-hero__btn-container">
-				<a href="#reservation" data-anchor class="section-hero__btn btn">
-					<span>Создать карту</span>
-				</a>
+			<a href="#reservation" data-anchor class="section-hero__btn btn btn_orange-border">Создать карту</a>
+		</div>
+		<a href="#create-card" data-anchor class="section-hero__btn-next"></a>
+	</div>
+	<div class="section-create-card" id="create-card">
+		<div class="container">
+			<h1 class="section-title section-title_black">Создайте свою клубную карту</h1>
+			<h2 class="section-subtitle">ВКЛЮЧАЙТЕ ТОЛЬКО ТЕ НАПРАВЛЕНИЯ, КОТОРЫЕ НЕОБХОДИМЫ ИМЕННО ВАМ</h2>
+		</div>
+	</div>
+	<div class="section-gallery">
+		<div class="container container-l">
+			<h1 class="section-title">Фотогалерея клуба</h1>
+			<div class="gallery">
+				<div class="gallery-slider">
+<!--					<div class="gallery-slider__item"></div>-->
+					<img alt="Ресепшен" src="img/%D0%A0%D0%B5%D1%81%D0%B5%D0%BF%D1%88%D0%B5%D0%BD%201.jpg" alt="" class="gallery-slider__img">
+					<img alt="Фитнес бар" src="img/%D0%A4%D0%B8%D1%82%D0%BD%D0%B5%D1%81%20%D0%B1%D0%B0%D1%80%202.jpg" alt="" class="gallery-slider__img">
+					<img alt="Кардиозона" src="img/%D0%9A%D0%B0%D1%80%D0%B4%D0%B8%D0%BE%D0%B7%D0%BE%D0%BD%D0%B0%203.jpg" alt="" class="gallery-slider__img">
+					<img alt="Тренажерный зал" src="img/%D0%A2%D1%80%D0%B5%D0%BD%D0%B0%D0%B6%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BB%204.jpg" alt="" class="gallery-slider__img">
+					<img alt="Зона свободных весов" src="img/%D0%97%D0%BE%D0%BD%D0%B0%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B5%D1%81%D0%BE%D0%B2%205.jpg" alt="" class="gallery-slider__img">
+					<img alt="Заk cycle??" src="img/%D0%97%D0%B0k%20cycle%206.jpg" alt="" class="gallery-slider__img">
+					<img alt="Зал бокса" src="img/%D0%97%D0%B0%D0%BB%20%D0%B1%D0%BE%D0%BA%D1%81%D0%B0%207.jpg" alt="" class="gallery-slider__img">
+					<img alt="Детский центр" src="img/%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%208.jpg" alt="" class="gallery-slider__img">
+					<img alt="Зал групповых программ" src="img/%D0%97%D0%B0%D0%BB%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%BE%D0%B2%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%209.jpg" alt="" class="gallery-slider__img">
+					<img alt="Игровой зал" src="img/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B7%D0%B0%D0%BB%2010.jpg" alt="" class="gallery-slider__img">
+					<img alt="Скалодром" src="img/%D0%A1%D0%BA%D0%B0%D0%BB%D0%BE%D0%B4%D1%80%D0%BE%D0%BC%2011.jpg" alt="" class="gallery-slider__img">
+				</div>
+				<div class="gallery__description">
+					<div class="gallery__item">
+						<span class="gallery__index"></span> / <span class="gallery__count"></span>
+					</div>
+					<div class="gallery__title"></div>
+				</div>
 			</div>
 		</div>
-		<a href="#about" data-anchor class="section-hero__btn-next"></a>
+	</div>
+	<div class="section-scheme">
+		<div class="section-scheme__container container container-l">
+			<h1 class="section-title section-title_black">схема клуба «Coliseum»</h1>
+			<h2 class="section-subtitle">здесь вы можете подробнее ознакомиться со схемой нашего клуба</h2>
+			<div class="scheme-map">
+				<div class="scheme-map__pin" style="left: 17.5%;top: 26.6%;"></div>
+				<div class="scheme-map__pin" style="left: 22.1%;top: 26.3%;"></div>
+				<div class="scheme-map__pin" style="left: 40.7%;top: 24.8%;"></div>
+				<div class="scheme-map__pin" style="left: 47.4%;top: 21.5%;"></div>
+				<div class="scheme-map__pin" style="left: 56.7%;top: 14.1%;"></div>
+				<div class="scheme-map__pin" style="left: 61.8%;top: 22.4%;"></div>
+				<div class="scheme-map__pin" style="left: 73.2%;top: 12.3%;"></div>
+				<div class="scheme-map__pin" style="left: 68.3%;top: 27.5%;"></div>
+				<div class="scheme-map__pin" style="left: 44.4%;top: 36.7%;"></div>
+				<div class="scheme-map__pin" style="left: 61.5%;top: 34.9%;"></div>
+				<div class="scheme-map__pin" style="left: 81%;top: 37.6%;"></div>
+				<div class="scheme-map__pin" style="left: 44.3%;top: 49.5%;"></div>
+				<div class="scheme-map__pin" style="left: 68.5%;top: 50.5%;"></div>
+				<div class="scheme-map__pin" style="left: 20.9%;top: 62.7%;"></div>
+				<div class="scheme-map__pin" style="left: 75.7%;top: 60.4%;"></div>
+				<div class="scheme-map__pin" style="left: 48.8%;top: 59.7%;"></div>
+				<div class="scheme-map__pin" style="left: 85.9%;top: 72.3%;"></div>
+				<div class="scheme-map__pin" style="left: 45.6%;top: 86%;"></div>
+				<div class="scheme-map__pin" style="left: 61.1%;top: 86.8%;"></div>
+				<div class="scheme-map__pin" style="left: 73.2%;top: 78.7%;"></div>
+				<div class="scheme-map__pin" style="left: 91.1%;top: 87.3%;"></div>
+			</div>
+			<div class="scheme-list">
+				<div class="scheme-list__btn-up"></div>
+				<ul class="scheme-list__container">
+					<li class="scheme-list__item">детская комната</li>
+					<li class="scheme-list__item">зал групповых программ</li>
+					<li class="scheme-list__item">фитнес-бар</li>
+					<li class="scheme-list__item">салон красоты</li>
+					<li class="scheme-list__item">зал cycle</li>
+					<li class="scheme-list__item">отдел продаж</li>
+					<li class="scheme-list__item">тренажерный зал</li>
+					<li class="scheme-list__item">кабинет врача</li>
+					<li class="scheme-list__item">массажный кабинет</li>
+					<li class="scheme-list__item">зал единоборств</li>
+					<li class="scheme-list__item">зал бокса</li>
+					<li class="scheme-list__item">игровой зал</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item">скалодром</li>
+				</ul>
+				<div class="scheme-list__btn-down"></div>
+			</div>
+		</div>
 	</div>
 <!--
 	<div class="section-about" id="about">

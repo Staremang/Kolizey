@@ -388,20 +388,42 @@ if (typeof(jQuery) !== "undefined") {
 		
 		if (typeof $.fn.owlCarousel  !== 'undefined') {
 
-			$('.section-reviews-slider').addClass('owl-carousel owl-carousel_no-dots owl-theme');
-			$('.section-reviews-slider').owlCarousel({
-				loop: true,
+			$('.gallery-slider').addClass('owl-carousel owl-carousel_no-dots owl-theme');
+			$('.gallery-slider').owlCarousel({ 
+				loop: false,
 				nav: false,
 				navText: [ '', '' ],
 				items: 1,
 //				autoWidth:true, 
 //				center:true,
+				onInitialized: sliderChange,
+//				onChanged: test,
+				onTranslated: sliderChange,
 				responsive : {
 					768 : {
 						nav: true
 					}
 				}
-				})
+			})
+			function sliderChange (e) {
+//				console.log($(e.target).find('.owl-item.active').children().attr('alt'));
+				console.log(String(e.item.index + 1) + '/' + String(e.item.count) + " " + $(e.target).find('.owl-item.active').children().attr('alt'));
+				var index = e.item.index + 1,
+					count = e.item.count;
+				if (index < 10) {
+					index = '0' + String(index);
+				}
+				if (count < 10) {
+					count = '0' + String(count);
+				}
+				$('.gallery__index').html(index);
+				$('.gallery__count').html(count);
+				$('.gallery__title').html($(e.target).find('.owl-item.active').children().attr('alt'));
+				
+			}
+//			$('.gallery-slider').on('initialized.owl.carousel', function (e) {
+//				console.log(e);
+//			})
 			
 			
 		}
