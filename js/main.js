@@ -308,9 +308,6 @@ if (typeof(jQuery) !== "undefined") {
 //		})
 //		
 //		
-//		$('a[data-anchor]').anchor({
-//			transitionDuration : 1000
-//		});
 //		
 //		var popup = false;
 //		$('.popup').hide();
@@ -404,6 +401,17 @@ if (typeof(jQuery) !== "undefined") {
 //				}
 //			});
 //		})
+		$('form').on('submit', function (e) {
+			e.preventDefault();
+			var data = $(this).serialize();
+			
+			console.log(data);
+		});
+		
+		
+		$('a[data-anchor]').anchor({
+			transitionDuration : 1000
+		});
 		
 		if (typeof $.fn.owlCarousel  !== 'undefined') {
 

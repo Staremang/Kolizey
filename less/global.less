@@ -1,4 +1,4 @@
-@develop-mode: false;
+@develop-mode: true;
 
 
 
@@ -172,6 +172,42 @@ body {
 //			box-shadow: 0 0 0 1px #da294f;
 //		}
 //	}
+}
+
+//input[type="checkbox"] {
+.checkbox {
+	position: relative;
+	outline: 0px !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin-bottom: 0px;
+	margin-right: 5px;
+	vertical-align: top;
+	background-color: #fff;
+//	color: #565a5c;
+	box-sizing: border-box;
+
+	padding: 0;
+	border: 2px solid #ffc300;
+//	box-shadow: inset 2.121px 2.121px 7px 0px rgba(0, 0, 0, 0.3);
+	height: 30px;
+	width: 30px;
+	border-radius: 0;
+	cursor: pointer;
+	&:checked {
+		&:before {
+			content: '';
+			width: 13px;
+			height: 10px;
+			background: url(../img/sprite.png) -139px 0px no-repeat;
+			position: absolute;
+			top: 8px;
+			left: 7px;
+		}
+	}
+	&__small {
+		
+	}
 }
 //.input-group {
 //	display: flex;
@@ -944,6 +980,32 @@ body {
 	border-radius: 15px;
 	&__step {
 		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			height: 3px;
+			width: 155px;
+			background: #ffc600; 
+			left: 17px;
+			top: 7px;
+		}
+		&:last-child {
+			&:before {
+				display: none;
+			}
+		}
+		&.active {
+			&:before {
+				background: #6c6c6c;
+			}
+			.step-scale__number {
+				color: #1d1d1d;
+			}
+			.step-scale__pin {
+				background-position: -154px 0;
+			}
+			
+		}
 	}
 	&__number {
 		position: absolute;
@@ -955,7 +1017,10 @@ body {
 		color: #ffc600;
 	}
 	&__pin {
-		background: url(../img/pin.png) no-repeat;
+//		background: url(../img/pin.png) no-repeat;
+		background-image: url(../img/sprite.png);
+		background-repeat: no-repeat;
+		background-position: -173px 0;
 		width: 17px;
 		height: 17px;
 		box-shadow: 0px 0px 9px 0px rgba(31, 29, 27, 0.42);
@@ -1037,7 +1102,27 @@ body {
 	&__bottom {
 		display: flex;
 		justify-content: flex-end;
-		margin-top: 145px;
+		margin-top: 38px;
+	}
+	
+	&__form {
+		margin-top: 33px;
+	}
+	&__input-group {
+		margin-bottom: 14px;
+	}
+	&__label {
+		font-weight: 500;
+		font-size: 18px;
+		color: #181818;
+		line-height: 30px;
+		margin-left: 11px;
+		cursor: pointer;
+	}
+	&__label-note {
+		font-weight: 300;
+		color: #666666;
+		margin-left: 4px;
 	}
 	
 }
@@ -1265,6 +1350,56 @@ body {
 				border-bottom-color: transparent;
 			}
 		}
+		&__btn {
+			border-radius: 50%;
+			width: 57px;
+			height: 57px;
+			display: inline-block;
+			box-shadow: 0 5px 11px rgba(0, 0, 0, 0.04);
+			padding: 0;
+			border: 0;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			&:before {
+				content: '';
+				position: absolute;
+				background-image: url(../img/sprite.png);
+				background-repeat: no-repeat;
+				width: 57px;
+				height: 57px;
+				left: 0;
+				top: 0;
+			}
+			
+		}
+		&__btn-up {
+			margin-top: 40px - 28px;
+			&:before {
+				background-position: 0 -93px;
+			}
+			&:hover:before {
+				background-position: -57px -93px;
+			}
+		}
+		&__btn-down {
+//			position: absolute;
+//			bottom: 0;
+//			left: 50%;
+			margin-top: -57px + 28px;
+			&:before {
+				background-position: -114px -93px;
+			}
+			&:hover:before {
+				background-position: -171px -93px;
+			}
+		}
+		&__nav {
+			height: 40px;
+			overflow: hidden;
+			text-align: center;
+			transform: translateZ(0);
+		}
 	}
 
 	@keyframes pinAnimation {
@@ -1415,8 +1550,6 @@ body {
 	}
 	&__man-and-woman {
 		position: absolute;
-		right: 0;
-		top: -10px;
 //		transform: translateZ(0);
 //		z-index: 0;
 		right: -79px;
@@ -1463,6 +1596,41 @@ body {
 		.col-md-6 { 
 			padding: 0 30px;
 		}
+	}
+	&__btn {
+		font-size: 16px;
+		color: #181818;
+//		font-weight: bold;
+//		text-transform: uppercase;
+		line-height: 1.2;
+		text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.35);
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+	&__checkbox-block {
+		text-align: right;
+		border-right: 1px solid #e0e0e0;
+	}
+	&__checkbox {
+		box-shadow: inset 2.121px 2.121px 7px 0px rgba(0, 0, 0, 0.3);
+		height: 24px;
+		width: 24px;
+		margin-right: 12px;
+		&:checked {
+			&:before {
+				top: 5px;
+				left: 4px;
+			}
+		}
+	}
+	&__checkbox-label {
+		display: inline-block;
+		text-align: left;
+		max-width: 200px;
+		font-size: 16px;
+		line-height: 20px;
+		margin-top: 3px;
+		cursor: pointer;
 	}
 }
 //////////////////////////
@@ -1594,95 +1762,3 @@ body {
 
 
 
-
-
-
-
-/**/
-/* datepicker */
-/**/
-//.ui-datepicker {
-//	display: none;
-//	padding: 10px 12px;
-//	background: white;
-//	box-shadow: 0 0 10px rgba(0,0,0,.3);
-////	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
-//	text-align: center;
-//	color: #666;
-//	a {
-//		color: #404040;
-//	}
-//}
-//.ui-datepicker-header {
-//	position: relative;
-//	margin: -10px -12px 10px;
-//	padding: 10px;
-////	border-bottom: 1px solid rgba(0,0,0,.1);
-//	line-height: 27px;
-//	color: white;
-//	background: #c90834;
-//	font: 16px/1.55 "BravoRG", sans-serif;
-//	text-transform: uppercase;
-//	letter-spacing: 1.5px;
-//	a {
-//		color: white;
-//	}
-//}
-//.ui-datepicker-prev, 
-//.ui-datepicker-next {
-//	position: absolute;
-//	top: 0;
-//	display: block;
-//	width: 47px;
-//	height: 47px;
-//	font-size: 15px;
-//	line-height: 47px;
-//	text-decoration: none;
-//	cursor: pointer;
-//}
-//.ui-datepicker-prev {
-//	left: 0;
-//}
-//.ui-datepicker-next {
-//	right: 0;
-//}
-//.ui-datepicker-calendar {
-//	border-collapse: collapse;
-//	font-size: 13px;
-//	line-height: 27px;
-//}
-//.ui-datepicker-calendar th {
-//	color: #999;
-//}
-//.ui-datepicker-calendar a,
-//.ui-datepicker-calendar span {
-//	display: block;
-//	width: 31px;
-//	margin: auto;
-//	text-decoration: none;
-//	color: #404040;
-//}
-//.ui-datepicker-calendar a:hover {
-//	background: rgba(0,0,0,.05);	
-//}
-//.ui-datepicker-calendar span {
-//	color: #bfbfbf;
-//}
-//.ui-datepicker-today a {
-//	font-weight: 700;
-//}
-//.ui-datepicker-calendar .ui-state-active {
-//	background: rgba(0,0,0,.05);
-//	cursor: default;	
-//}
-//.ui-datepicker-inline {
-//	border: 2px solid #e5e5e5;
-//	background: #fff;
-//	box-shadow: none;
-//}
-//.ui-datepicker-inline .ui-datepicker-header {
-//	line-height: 47px;
-//}
-//.ui-datepicker-inline .ui-datepicker-calendar {
-//	width: 100%;
-//}

@@ -65,12 +65,12 @@
 		</div>
 		<a href="#create-card" data-anchor class="section-hero__btn-next"></a>
 	</div>
-	<div class="section-create-card" id="create-card">
+	<div class="section-create-card">
 		<div class="container container-l">
-			<h1 class="section-title section-title_black">Создайте свою клубную карту</h1>
+			<h1 class="section-title section-title_black"  id="create-card">Создайте свою клубную карту</h1>
 			<h2 class="section-subtitle">ВКЛЮЧАЙТЕ ТОЛЬКО ТЕ НАПРАВЛЕНИЯ, КОТОРЫЕ НЕОБХОДИМЫ ИМЕННО ВАМ</h2>
 			<div class="step-scale">
-				<div class="step-scale__step">
+				<div class="step-scale__step active">
 					<div class="step-scale__number">01</div>
 					<div class="step-scale__pin"></div>
 				</div>
@@ -96,6 +96,16 @@
 					<div class="step__item">
 						<div class="step__number">Вопрос №1</div>
 						<div class="step__title">Вы уже были в нашем клубе?</div>
+						<div class="step__form">
+							<div class="step__input-group">
+								<input  id="new-guest" type="radio" class="checkbox" name="old-or-new">
+								<label for="new-guest" class="step__label">Я новый гость  <span class="step__label-note">(оформляю карту впервые)</span></label>
+							</div>
+							<div class="step__input-group">
+								<input  id="old-guest" type="radio" class="checkbox" name="old-or-new">
+								<label for="old-guest" class="step__label">Продление карты  <span class="step__label-note">(занимался ранее в клубе)</span></label>
+							</div>
+						</div>
 						<div class="step__bottom">
 							<button class="btn btn_orange">Продолжить опрос</button>
 						</div>
@@ -177,7 +187,9 @@
 				<div class="scheme-map__pin" style="left: 91.1%;top: 87.3%;"></div>
 			</div>
 			<div class="scheme-list">
-				<div class="scheme-list__btn-up"></div>
+				<div class="scheme-list__nav">
+					<button class="scheme-list__btn scheme-list__btn-up"></button>
+				</div>
 				<ul class="scheme-list__container">
 					<li class="scheme-list__item">детская комната</li>
 					<li class="scheme-list__item">зал групповых программ</li>
@@ -201,7 +213,9 @@
 					<li class="scheme-list__item">скалодром</li>
 					<li class="scheme-list__item">скалодром</li>
 				</ul>
-				<div class="scheme-list__btn-down"></div>
+				<div class="scheme-list__nav">
+					<button class="scheme-list__btn scheme-list__btn-down"></button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -276,22 +290,26 @@
 			</ul>
 			<img src="img/man-and-woman.png" alt="" class="section-guest-visit__man-and-woman">
 			<form action="" class="guest-visit-form">
+				<input type="hidden" name="form-type" value="guest-visit-form">
 				<div class="row">
 					<div class="col-md-4">
 						<label for="guest-visit-form__name" class="guest-visit-form__label">Ваше имя:</label>
-						<input  id="guest-visit-form__name" name="" type="text" class="guest-visit-form__input">
+						<input  id="guest-visit-form__name" required autocomplete="name" name="name" type="text" class="guest-visit-form__input">
 					</div>
 					<div class="col-md-4">
 						<label for="guest-visit-form__tel" class="guest-visit-form__label">Ваш телефон:</label>
-						<input  id="guest-visit-form__tel" name="" type="tel" class="guest-visit-form__input">
+						<input  id="guest-visit-form__tel" required autocomplete="tel" name="tel" type="tel" class="guest-visit-form__input">
 					</div>
 					<div class="col-md-4">
 						<label for="guest-visit-form__date" class="guest-visit-form__label">удобное время:</label>
-						<input  id="guest-visit-form__date" name="" type="text" class="guest-visit-form__input">
+						<input  id="guest-visit-form__date" required name="date" type="text" class="guest-visit-form__input">
 					</div>
 				</div>
 				<div class="row guest-visit-form__bottom">
-					<div class="col-md-6"></div>
+					<div class="col-md-6 guest-visit-form__checkbox-block">
+						<input  id="guest-visit-form__personal-data" type="checkbox" required name="personal-data" class="checkbox guest-visit-form__checkbox">
+						<label for="guest-visit-form__personal-data" class="guest-visit-form__checkbox-label">Я согласен на обработку персональных данных</label>
+					</div>
 					<div class="col-md-6">
 						<button type="submit" class="guest-visit-form__btn btn btn_orange">Записаться</button>
 					</div>
