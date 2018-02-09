@@ -16,6 +16,8 @@
 
 
 body {
+	
+    -webkit-font-smoothing: antialiased;
 	font-family: "Stem", sans-serif;
 	font-size: 14px;
 	background: #f4f4f4;
@@ -693,6 +695,21 @@ body {
 		line-height: 44px;
 //		line-height: 50px;
 	}
+	&_left {
+		text-align: left;
+		position: relative;
+		margin-top: 32px;
+		&:before {
+			content: '';
+			display: block;
+			width: 81px;
+			height: 5px;
+			background: #ffc200;
+			position: absolute;
+			left: 0;
+			top: -31px;
+		}
+	}
 }
 .section-subtitle {
 	font-size: 16px;
@@ -1352,26 +1369,21 @@ body {
 ////////////////////////////////////////////////////////////
 
 .section-guest-visit {
-    padding: 149px 0;
+    padding: 117px 0 140px;
     margin-top: -100px;
+    z-index: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+	
+	& when (@develop-mode = false) {
+		background: #f4f4f4;
+	}
 	
 	&__container {
 		position: relative;
 	}
 	&__title {
-		text-align: left;
 		max-width: 600px;
-		position: relative;
-		&:before {
-			content: '';
-			display: block;
-			width: 81px;
-			height: 5px;
-			background: #ffc200;
-			position: absolute;
-			left: 0;
-			top: -31px;
-		}
 	}
 	&__subtitle {
 		text-align: left;
@@ -1451,6 +1463,132 @@ body {
 		.col-md-6 { 
 			padding: 0 30px;
 		}
+	}
+}
+//////////////////////////
+
+
+////////////////////////////////////////////////////////////
+// Футер
+////////////////////////////////////////////////////////////
+
+.footer {
+	
+	& when (@develop-mode = false) {
+		background: url(../img/footer-bg.jpg) center center no-repeat;
+		background-size: cover;
+	}
+    padding: 225px 0 50px;
+    margin-top: -125px;
+	
+	@media (min-width: @width-xl) {
+		&__left-container {
+			display: flex;
+			justify-content: flex-end;
+		} 
+		&__left-block {
+			width: 570px;
+			max-width: 570px;
+		}
+	}
+	
+	&__title {
+		margin-bottom: 41px;
+	}
+	&__contacts {
+		margin-right: 68px;
+		background: url(../img/contacts-bg.png) center no-repeat;
+		> .row:first-child {
+			margin-bottom: 54px;
+		}
+	}
+	&__subtitle {
+		font-size: 18px;
+		letter-spacing: 3.5px;
+		color: #ffc200;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	&__info {
+		display: block;
+		text-decoration: none;
+		color: white;
+		font-size: 18px;
+		line-height: 25px;
+	}
+	&__social-btn {
+		display: inline-block;
+		border: 2px solid #ffc300;
+		width: 48px;
+		height: 48px;
+		background-repeat: no-repeat;
+		background-image: url(../img/sprite.png);
+		margin-right: 5px;
+		&:hover {
+			background-color: #ffc300;
+		}
+		&_vk {
+			background-position: 0 0;
+			&:hover {
+				background-position: 0 -44px;
+			}
+		}
+		&_fb {
+			background-position: -44px -0;
+			&:hover {
+				background-position: -44px -44px;
+			}
+		}
+		&_inst {
+			background-position: -88px 0;
+			&:hover {
+				background-position: -88px -44px;
+			}
+		}
+	}
+	&__bottom-info {
+		margin-top: 49px;
+		display: flex;
+	}
+	&__uds-game-logo { 
+		text-decoration: none;
+		display: inline-block;
+		width: 157px;
+		position: relative;
+		&:after {
+			content: '';
+//			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 10px;
+			bottom: 10px;
+			background: white;
+			opacity: .1;
+			width: 1px;
+			display: block;
+		}
+	}
+	&__tag-list {
+		padding-left: 39px;
+	}
+	&__tag-title {
+		font-size: 18px;
+		color: white;
+		margin-bottom: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&__tag {
+		font-size: 16px;
+		color: #ffc200;
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 19px;
+	}
+	&__map {
+		width: 100%;
+		height: 486px;
 	}
 }
 

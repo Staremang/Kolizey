@@ -111,7 +111,26 @@ var url = 'mail.php';
 
 })(jQuery);
 
+if (typeof ymaps !== "undefined" && typeof addr !== "undefined") {
+	ymaps.ready(init);
+	var yaMap;
+	function init() {
+		ymaps.geocode(addr, {
+			results: 1
+		}).then(function (res) {
 
+			var coords = res.geoObjects.get(0).geometry.getCoordinates(),
+				myPlacemark = new ymaps.Placemark(coords);
+			yaMap = new ymaps.Map("map",{
+				center: coords,
+				zoom: 17,
+				controls: ['zoomControl', 'fullscreenControl']
+			});
+
+			yaMap.geoObjects.add(myPlacemark);
+		});
+	}
+}
 if (typeof(jQuery) !== "undefined") {
 	$(document).ready(function () {
 		// var l = 0;
@@ -177,214 +196,214 @@ if (typeof(jQuery) !== "undefined") {
 			$('.section-hero__video').hide();
 			$('.section-hero__video-overlay').hide();
 		}
-		$.datepicker.regional['ru'] = {
-            closeText: 'Закрыть',
-            prevText: '&#x3c;Пред',
-            nextText: 'След&#x3e;',
-            currentText: 'Сегодня',
-            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-            monthNamesShort: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-            dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
-            dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            weekHeader: 'Нед',
-            dateFormat: 'dd.mm.yy',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-		
-		$.datepicker.setDefaults( $.datepicker.regional['ru'] );
-
-		$('input[data-custom-placeholder]')
-			.focus(function() {
-				$('label[for="' + $(this).attr('id') + '"]').addClass('active');
-			})
-			.blur(function() {
-				if ($(this).val() == '') {
-					$('label[for="' + $(this).attr('id') + '"]').removeClass('active');
-				}
-			})
-		
-		
-		if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
-			$('#registration-date')
-				.attr('type', 'date')
-				.focus(function() {
-					$('label[for="registration-date"]').addClass('active');
-				})
-				.blur(function() {
-					if ($(this).val() == '') {
-						$('label[for="registration-date"]').removeClass('active');
-					}
-				})
-//			$('#registration-time')
-//				.attr('type', 'time')
+//		$.datepicker.regional['ru'] = {
+//            closeText: 'Закрыть',
+//            prevText: '&#x3c;Пред',
+//            nextText: 'След&#x3e;',
+//            currentText: 'Сегодня',
+//            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+//            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+//            monthNamesShort: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+//            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+//            dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+//            dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+//            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+//            weekHeader: 'Нед',
+//            dateFormat: 'dd.mm.yy',
+//            firstDay: 1,
+//            isRTL: false,
+//            showMonthAfterYear: false,
+//            yearSuffix: ''
+//        };
+//		
+//		$.datepicker.setDefaults( $.datepicker.regional['ru'] );
+//
+//		$('input[data-custom-placeholder]')
+//			.focus(function() {
+//				$('label[for="' + $(this).attr('id') + '"]').addClass('active');
+//			})
+//			.blur(function() {
+//				if ($(this).val() == '') {
+//					$('label[for="' + $(this).attr('id') + '"]').removeClass('active');
+//				}
+//			})
+//		
+//		
+//		if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+//			$('#registration-date')
+//				.attr('type', 'date')
 //				.focus(function() {
-//					$('label[for="registration-time').addClass('active');
+//					$('label[for="registration-date"]').addClass('active');
 //				})
 //				.blur(function() {
 //					if ($(this).val() == '') {
-//						$('label[for="registration-time"]').removeClass('active');
+//						$('label[for="registration-date"]').removeClass('active');
 //					}
 //				})
-		} else {
-			$('#registration-date')
-				.focus(function() {
-					$('label[for="' + $(this).attr('id') + '"]').addClass('active');
-				})
-				.datepicker({
-		//			dateFormat: 'dd.mm.yy',
-					minDate: new Date(),
-					prevText: '<',
-					nextText: '>',
-					onClose: function (date) {
-						if (date == '') {
-							$('label[for="' + $(this).attr('id') + '"]').removeClass('active');
-						}
-					}
-				});
-			
-		}
+////			$('#registration-time')
+////				.attr('type', 'time')
+////				.focus(function() {
+////					$('label[for="registration-time').addClass('active');
+////				})
+////				.blur(function() {
+////					if ($(this).val() == '') {
+////						$('label[for="registration-time"]').removeClass('active');
+////					}
+////				})
+//		} else {
+//			$('#registration-date')
+//				.focus(function() {
+//					$('label[for="' + $(this).attr('id') + '"]').addClass('active');
+//				})
+//				.datepicker({
+//		//			dateFormat: 'dd.mm.yy',
+//					minDate: new Date(),
+//					prevText: '<',
+//					nextText: '>',
+//					onClose: function (date) {
+//						if (date == '') {
+//							$('label[for="' + $(this).attr('id') + '"]').removeClass('active');
+//						}
+//					}
+//				});
+//			
+//		}
 //		$('#registration-time').timeDropper({
 //			format: 'HH:00',
 //			setCurrentTime: false
 //		});
 
-		$('.nav-menu-btn').click(function() {
-			if ($(this).hasClass('open')) {
-				$(this).removeClass('open');
-				$(this).children('.nav-menu-btn__text').html('Открыть меню')
-				$('.menu').removeClass('open');
-			} else {
-				$(this).addClass('open');
-				$(this).children('.nav-menu-btn__text').html('Закрыть меню');
-				$('.menu').addClass('open');
-			}
-		})
-
-
-		$('.section-game-list__category-link').click(function(e) {
-			e.preventDefault();
-
-			$('.section-game-list__category-link').removeClass('active');
-			$(this).addClass('active');
-
-			$('.section-game-list__tab').removeClass('active');
-			$('.section-game-list__tab[data-tab="' + $(this).attr('data-tab') + '"]').addClass('active');
-
-		})
-		
-//		var totalPrice = 0;
-		$('.reservation__item').click(function () {
-			$(this).toggleClass('active');
-			var total = 0;
-			$('.reservation__item.active').each(function () {
-				total += +$(this).attr('data-price');
-			})
-			$('.reservation__total-num').html(total.toString() + ' Р');
-		})
-		
-		
-		$('a[data-anchor]').anchor({
-			transitionDuration : 1000
-		});
-		
-		var popup = false;
-		$('.popup').hide();
-		
-		
-		function showPopup (el) {
-			$('body').css('overflow', 'hidden');
-			el.addClass('active');
-			el.fadeIn();
-			popup = true;
-		}
-		
-		function hidePopup (el) {
-			el.fadeOut();
-			el.removeClass('active');
-			$('body').css('overflow', 'auto');
-			popup = false;
-		}
-		
-		
-		$('[data-popup]').click(function (e) {
-			e.preventDefault();
-			if (popup) {
-				hidePopup($('.popup.active'));
-			} else {
-				showPopup($('#' + $(this).attr('data-popup')));
-			}
-		})
-		
-		$('.popup').click(function(e) {
-			if ($(e.target).hasClass('popup')) {
-				hidePopup($(this));
-			}
-		})
-		$('.popup__btn-close').click(function () {
-			hidePopup($(this).parent());
-		})
-		
-		
-		$('form').on('submit', function (e) {
-			e.preventDefault();
-			
-			
-			var popupBlock = $(e.target).parent();
-			if (popupBlock.attr('id') == 'callme') {
-				if ($('#callme-name').val() == '' || $('#callme-tel').val() == '' || $('#callme-email').val() == '') {
-					alert('Не все поля заполнены');
-					return;
-				}
-			} else if (popupBlock.attr('id') == 'registration'){
-				if ($('#promo-game').prop("checked") == false && $('#test-game').prop("checked") == false && $('#one-hour-of-play').prop("checked") == false) {
-					alert('Не все поля заполнены');
-					return;
-				}
-				
-				if ($('#registration-name').val() == '' || $('#registration-tel').val() == '' || $('#registration-date').val() == '') {
-					alert('Не все поля заполнены');
-					return;
-				}
-			}
-			if (typeof yaCounter47279892 != 'undefined') {
-				yaCounter47279892.reachGoal('zayavka');
-			} else {
-				console.log('Adblock detected')
-			}
-			var data = $(this).serialize(),
-				htmlText = popupBlock.find('.popup-wrapper__btn').html();
-			
-			$.ajax({
-				type: "POST",
-				url: url,
-				data: data,
-				beforeSend: function () {
-					popupBlock.find('.popup-wrapper__btn').html('Отправка...');
-				},
-				error: function () {
-					popupBlock.find('.popup-wrapper__btn').html('Ошибка');
-					setTimeout(function () {
-						popupBlock.find('.popup-wrapper__btn').html(htmlText);
-					}, 5000)
-				},
-				success: function () {
-					if (popupBlock.attr('id') == 'registration') {
-						alert("Благодарим за заявку! Мы перезвоним вам в ближайшее время для подтверждения бронирования");
-					} else if (popupBlock.attr('id') == 'callme') {
-						alert("Благодарим за заявку! Мы перезвоним вам в ближайшее время");
-					}
-					
-					hidePopup(popupBlock);
-					popupBlock.find('.popup-wrapper__btn').html(htmlText);
-				}
-			});
-		})
+//		$('.nav-menu-btn').click(function() {
+//			if ($(this).hasClass('open')) {
+//				$(this).removeClass('open');
+//				$(this).children('.nav-menu-btn__text').html('Открыть меню')
+//				$('.menu').removeClass('open');
+//			} else {
+//				$(this).addClass('open');
+//				$(this).children('.nav-menu-btn__text').html('Закрыть меню');
+//				$('.menu').addClass('open');
+//			}
+//		})
+//
+//
+//		$('.section-game-list__category-link').click(function(e) {
+//			e.preventDefault();
+//
+//			$('.section-game-list__category-link').removeClass('active');
+//			$(this).addClass('active');
+//
+//			$('.section-game-list__tab').removeClass('active');
+//			$('.section-game-list__tab[data-tab="' + $(this).attr('data-tab') + '"]').addClass('active');
+//
+//		})
+//		
+////		var totalPrice = 0;
+//		$('.reservation__item').click(function () {
+//			$(this).toggleClass('active');
+//			var total = 0;
+//			$('.reservation__item.active').each(function () {
+//				total += +$(this).attr('data-price');
+//			})
+//			$('.reservation__total-num').html(total.toString() + ' Р');
+//		})
+//		
+//		
+//		$('a[data-anchor]').anchor({
+//			transitionDuration : 1000
+//		});
+//		
+//		var popup = false;
+//		$('.popup').hide();
+//		
+//		
+//		function showPopup (el) {
+//			$('body').css('overflow', 'hidden');
+//			el.addClass('active');
+//			el.fadeIn();
+//			popup = true;
+//		}
+//		
+//		function hidePopup (el) {
+//			el.fadeOut();
+//			el.removeClass('active');
+//			$('body').css('overflow', 'auto');
+//			popup = false;
+//		}
+//		
+//		
+//		$('[data-popup]').click(function (e) {
+//			e.preventDefault();
+//			if (popup) {
+//				hidePopup($('.popup.active'));
+//			} else {
+//				showPopup($('#' + $(this).attr('data-popup')));
+//			}
+//		})
+//		
+//		$('.popup').click(function(e) {
+//			if ($(e.target).hasClass('popup')) {
+//				hidePopup($(this));
+//			}
+//		})
+//		$('.popup__btn-close').click(function () {
+//			hidePopup($(this).parent());
+//		})
+//		
+//		
+//		$('form').on('submit', function (e) {
+//			e.preventDefault();
+//			
+//			
+//			var popupBlock = $(e.target).parent();
+//			if (popupBlock.attr('id') == 'callme') {
+//				if ($('#callme-name').val() == '' || $('#callme-tel').val() == '' || $('#callme-email').val() == '') {
+//					alert('Не все поля заполнены');
+//					return;
+//				}
+//			} else if (popupBlock.attr('id') == 'registration'){
+//				if ($('#promo-game').prop("checked") == false && $('#test-game').prop("checked") == false && $('#one-hour-of-play').prop("checked") == false) {
+//					alert('Не все поля заполнены');
+//					return;
+//				}
+//				
+//				if ($('#registration-name').val() == '' || $('#registration-tel').val() == '' || $('#registration-date').val() == '') {
+//					alert('Не все поля заполнены');
+//					return;
+//				}
+//			}
+//			if (typeof yaCounter47279892 != 'undefined') {
+//				yaCounter47279892.reachGoal('zayavka');
+//			} else {
+//				console.log('Adblock detected')
+//			}
+//			var data = $(this).serialize(),
+//				htmlText = popupBlock.find('.popup-wrapper__btn').html();
+//			
+//			$.ajax({
+//				type: "POST",
+//				url: url,
+//				data: data,
+//				beforeSend: function () {
+//					popupBlock.find('.popup-wrapper__btn').html('Отправка...');
+//				},
+//				error: function () {
+//					popupBlock.find('.popup-wrapper__btn').html('Ошибка');
+//					setTimeout(function () {
+//						popupBlock.find('.popup-wrapper__btn').html(htmlText);
+//					}, 5000)
+//				},
+//				success: function () {
+//					if (popupBlock.attr('id') == 'registration') {
+//						alert("Благодарим за заявку! Мы перезвоним вам в ближайшее время для подтверждения бронирования");
+//					} else if (popupBlock.attr('id') == 'callme') {
+//						alert("Благодарим за заявку! Мы перезвоним вам в ближайшее время");
+//					}
+//					
+//					hidePopup(popupBlock);
+//					popupBlock.find('.popup-wrapper__btn').html(htmlText);
+//				}
+//			});
+//		})
 		
 		if (typeof $.fn.owlCarousel  !== 'undefined') {
 

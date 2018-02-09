@@ -10,6 +10,7 @@
 	
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/main.min.css">
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 	<header class="header">
@@ -263,7 +264,7 @@
 	</div>
 	<div class="section-guest-visit">
 		<div class="section-guest-visit__container container">
-			<h1 class="section-guest-visit__title section-title section-title_black">запишитесь на бесплатный гостевой визит</h1>
+			<h1 class="section-guest-visit__title section-title section-title_left section-title_black">запишитесь на бесплатный гостевой визит</h1>
 			<div class="section-guest-visit__subtitle section-subtitle">что входит:</div>
 			<ul class="section-guest-visit__list">
 				<li class="section-guest-visit__list-item">Посещение тренажерного зала</li>
@@ -299,6 +300,60 @@
 			<img src="img/arm.png" alt="" class="section-guest-visit__arm">
 		</div>
 	</div>
+	<footer class="footer">
+		<div class="container container-l container-xl">
+			<div class="row">
+				<div class="col-md-6 footer__left-container">
+					<div class="footer__left-block">
+						<h1 class="footer__title section-title section-title_left ">Контакты</h1>
+						<div class="footer__contacts">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="footer__subtitle">адрес:</div>
+									<div class="footer__info">Ленина 60, ТРК</div>
+									<div class="footer__info">Колизей Атриум</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="footer__subtitle">телефон:</div>
+									<div class="footer__info">
+										<a class="footer__info" href="">+7 (342) 233-11-22</a>
+										<a class="footer__info" href="mailto:pr@perm-filnes.ru">pr@perm-filnes.ru</a>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="footer__subtitle">время работы:</div>
+									<div class="footer__info">Ежедневно</div>
+									<div class="footer__info">с 6:00 до 00:00</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="footer__subtitle">мы в соц. сетях:</div>
+									<a href="" class="footer__social-btn footer__social-btn_vk"></a>
+									<a href="" class="footer__social-btn footer__social-btn_fb"></a>
+									<a href="" class="footer__social-btn footer__social-btn_inst"></a>
+								</div>
+							</div>
+						</div>
+						<div class="footer__bottom-info">
+							<div class="footer__uds-game-logo">
+								<img src="img/uds-game-logo.png" alt="">
+							</div>
+							<div class="footer__tag-list">
+								<div class="footer__tag-title">всегда рады вас видеть!</div>
+								<div class="footer__tag">#ФЦКОЛИЗЕЙ</div>
+								<div class="footer__tag">#ЦЕНТРУПРАВЛЕНИЯВЗЛЕТАМИ</div>
+								<div class="footer__tag">#ПРИТЯЖЕНИЕУСПЕХА</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div id="map" class="footer__map"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
 <!--
 	<div class="section-about" id="about">
 		<img src="img/control-1.png" alt="" class="section-about__img-1">
@@ -449,11 +504,18 @@
 	</div>
 -->
 	
+	<script>
+		var addr = "Пермь, Ленина 60";
+	</script>
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	
+	
+<!--
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/simplebar.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+-->
 	
 	<script src="js/main.min.js"></script>
 </body>
