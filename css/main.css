@@ -2418,6 +2418,12 @@ body {
   vertical-align: middle;
   line-height: 19px;
 }
+.input-text {
+  font-size: 16px;
+  color: #181818;
+  padding: 15px 15px 14px;
+  border: 1px solid #ffc600;
+}
 .checkbox {
   position: relative;
   outline: 0px !important;
@@ -2444,6 +2450,14 @@ body {
   position: absolute;
   top: 8px;
   left: 7px;
+}
+.checkbox_small {
+  height: 22px;
+  width: 22px;
+}
+.checkbox_small:checked:before {
+  top: 5px;
+  left: 3px;
 }
 .header {
   position: absolute;
@@ -3036,13 +3050,61 @@ body {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  margin-top: -20px;
+}
+#interview-step-1 .step__bottom {
   margin-top: 38px;
 }
+#interview-step-5 .step__bottom {
+  margin-top: 18px;
+}
+#interview-step-6 .step__bottom {
+  margin-top: 34px;
+}
+.step__item {
+  display: none;
+}
+.step__item.active {
+  display: block;
+}
 .step__form {
+  margin-top: 19px;
+}
+#interview-step-1 .step__form {
   margin-top: 33px;
+}
+#interview-step-5 .step__form {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#interview-step-6 .step__form {
+  margin-top: 34px;
+}
+.step__left-block {
+  width: 210px;
+  max-width: 210px;
+}
+.step__note {
+  opacity: .5;
+  color: #181818;
+  font-size: 14px;
+  margin-top: -4px;
+}
+.step__btn-submit {
+  min-width: 232px;
+  margin-left: 10px;
 }
 .step__input-group {
   margin-bottom: 14px;
+}
+#interview-step-5 .step__input-group {
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+#interview-step-6 .step__input-group {
+  margin-bottom: 5px;
 }
 .step__label {
   font-weight: 500;
@@ -3052,10 +3114,19 @@ body {
   margin-left: 11px;
   cursor: pointer;
 }
+#interview-step-5 .step__label {
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 2px;
+  white-space: nowrap;
+}
 .step__label-note {
   font-weight: 300;
   color: #666666;
   margin-left: 4px;
+}
+.step__input {
+  width: 273px;
 }
 .bonus-text {
   font-size: 26px;

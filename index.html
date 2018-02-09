@@ -92,25 +92,167 @@
 				</div>
 			</div>
 			<div class="step">
-				<div class="step__container">
-					<div class="step__item">
+				<form class="step__container">
+					<div class="step__item active" id="interview-step-1">
 						<div class="step__number">Вопрос №1</div>
 						<div class="step__title">Вы уже были в нашем клубе?</div>
 						<div class="step__form">
 							<div class="step__input-group">
-								<input  id="new-guest" type="radio" class="checkbox" name="old-or-new">
-								<label for="new-guest" class="step__label">Я новый гость  <span class="step__label-note">(оформляю карту впервые)</span></label>
+								<input  id="1-step-new" type="radio" class="checkbox" name="old-or-new" value="Я новый гость">
+								<label for="1-step-new" class="step__label">Я новый гость  <span class="step__label-note">(оформляю карту впервые)</span></label>
 							</div>
 							<div class="step__input-group">
-								<input  id="old-guest" type="radio" class="checkbox" name="old-or-new">
-								<label for="old-guest" class="step__label">Продление карты  <span class="step__label-note">(занимался ранее в клубе)</span></label>
+								<input  id="1-step-old" type="radio" class="checkbox" name="old-or-new" value="Продление карты">
+								<label for="1-step-old" class="step__label">Продление карты  <span class="step__label-note">(занимался ранее в клубе)</span></label>
 							</div>
 						</div>
 						<div class="step__bottom">
 							<button class="btn btn_orange">Продолжить опрос</button>
 						</div>
 					</div>
-				</div>
+					<div class="step__item" id="interview-step-2">
+						<div class="step__number">Вопрос №2</div>
+						<div class="step__title">с кем вы будете посещать наш фитнес-клуб?</div>
+						<div class="step__form">
+							<div class="step__input-group">
+								<input  id="2-step-alone" type="radio" class="checkbox" name="how-many-guests" value="Один / одна">
+								<label for="2-step-alone" class="step__label">Один / одна</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="2-step-w-friends" type="radio" class="checkbox" name="how-many-guests" value="С другом / подругой">
+								<label for="2-step-w-friends" class="step__label">С другом / подругой</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="2-step-w-family" type="radio" class="checkbox" name="how-many-guests" value="С семьей">
+								<label for="2-step-w-family" class="step__label">С семьей</label>
+							</div>
+						</div>
+						<div class="step__bottom">
+							<button class="btn btn_orange">Продолжить опрос</button>
+						</div>
+					</div>
+					<div class="step__item " id="interview-step-3">
+						<div class="step__number">Вопрос №3</div>
+						<div class="step__title">НА КАКОЙ СРОК ИНТЕРЕСУЕТ ФИТНЕС-КАРТА?</div>
+						<div class="step__form">
+							<div class="step__input-group">
+								<input  id="3-step-24m" type="radio" class="checkbox" name="period" value="24">
+								<label for="3-step-24m" class="step__label">24 месяца</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="3-step-12m" type="radio" class="checkbox" name="period" value="12">
+								<label for="3-step-12m" class="step__label">12 месяцев</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="3-step-6m" type="radio" class="checkbox" name="period" value="6">
+								<label for="3-step-6m" class="step__label">6 месяцев</label>
+							</div>
+						</div>
+						<div class="step__bottom">
+							<button class="btn btn_orange">Продолжить опрос</button>
+						</div>
+					</div>
+					<div class="step__item " id="interview-step-4">
+						<div class="step__number">Вопрос №4</div>
+						<div class="step__title">В КАКОЕ ВРЕМЯ ВАМ УДОБНО ЗАНИМАТЬСЯ?</div>
+						<div class="step__form">
+							<div class="step__input-group">
+								<input  id="4-step-any-time" type="radio" class="checkbox" name="time" value="В любое время">
+								<label for="4-step-any-time" class="step__label">В любое время</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="4-step-17h" type="radio" class="checkbox" name="time" value="До 17:00">
+								<label for="4-step-17h" class="step__label">До 17:00</label>
+							</div>
+							<div class="step__input-group">
+								<input  id="4-step-weekend" type="radio" class="checkbox" name="time" value="В выходные">
+								<label for="4-step-weekend" class="step__label">В выходные</label>
+							</div>
+						</div>
+						<div class="step__bottom">
+							<button class="btn btn_orange">Продолжить опрос</button>
+						</div>
+					</div>
+					<div class="step__item " id="interview-step-5">
+						<div class="step__number">Вопрос №5</div>
+						<div class="step__title">ВЫБЕРИТЕ ИНТЕРЕСУЮЩИЕ ВАС ФИТНЕС-НАПРАВЛЕНИЯ:</div>
+						<div class="step__form">
+							<div class="step__left-block">
+								<div class="step__input-group">
+									<input  id="5-step-1" type="checkbox" class="checkbox checkbox_small" name="trenazhernyy-zal">
+									<label for="5-step-1" class="step__label">Тренажерный зал</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-2" type="checkbox" class="checkbox checkbox_small" name="Yedinoborstva">
+									<label for="5-step-2" class="step__label">Единоборства</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-3" type="checkbox" class="checkbox checkbox_small" name="Yoga-i-pilates">
+									<label for="5-step-3" class="step__label">Йога и пилатес</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-4" type="checkbox" class="checkbox checkbox_small" name="Cikle">
+									<label for="5-step-4" class="step__label">Сайкл</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-5" type="checkbox" class="checkbox checkbox_small" name="Bannyy-kompleks">
+									<label for="5-step-5" class="step__label">Банный комплекс</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-6" type="checkbox" class="checkbox checkbox_small" name="Massazh">
+									<label for="5-step-6" class="step__label">Массаж</label>
+								</div>
+							</div>
+							<div class="step__right-block">
+								<div class="step__input-group">
+									<input  id="5-step-7" type="checkbox" class="checkbox checkbox_small" name="Gruppovyye-programmy">
+									<label for="5-step-7" class="step__label">Групповые программы</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-8" type="checkbox" class="checkbox checkbox_small" name="Tantsevalnyye-programmy">
+									<label for="5-step-8" class="step__label">Танцевальные программы</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-9" type="checkbox" class="checkbox checkbox_small" name="Funktsionalnyy-trening">
+									<label for="5-step-9" class="step__label">Функциональный тренинг</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-10" type="checkbox" class="checkbox checkbox_small" name="Personalnyy-trening">
+									<label for="5-step-10" class="step__label">Персональный тренинг</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-11" type="checkbox" class="checkbox checkbox_small" name="Fitnes-testirovaniye">
+									<label for="5-step-11" class="step__label">Фитнес-тестирование</label>
+								</div>
+								<div class="step__input-group">
+									<input  id="5-step-12" type="checkbox" class="checkbox checkbox_small" name="Detskiy-tsentr">
+									<label for="5-step-12" class="step__label">Детский центр</label>
+								</div>
+							</div>
+						</div>
+						<div class="step__bottom">
+							<button class="btn btn_orange">Продолжить опрос</button>
+						</div>
+					</div>
+					<div class="step__item" id="interview-step-6">
+						<div class="step__title"><span class="orange">ВВЕДИТЕ ВАШи данные</span> ДЛЯ РЕЗЕРВИРОВАНИЯ СКИДКИ</div>
+						<div class="step__form">
+							<div class="step__input-group">
+								<input id="" type="text" class="step__input input-text" name="name" autocomplete="name" placeholder="Введите Ваше имя">
+							</div>
+							<div class="step__input-group">
+								<input id="" type="tel" class="step__input input-text" name="tel" autocomplete="tel" placeholder="Введите Ваш телефон">
+							</div>
+							<div class="step__input-group">
+								<input id="" type="email" class="step__input input-text" name="email" autocomplete="email" placeholder="Введите Ваш E-Mail">
+							</div>
+						</div>
+						<div class="step__bottom">
+							<div class="step__note">На указанный адрес эл. почты будет выслано предложение с доп. скидками и бонусами</div>
+							<button type="submit" class="step__btn-submit btn btn_orange">Получить скидку</button>
+						</div>
+					</div>
+				</form>
 				<div class="step__percent"></div>
 				<div class="step__your-discount">
 					<div class="step__discount-text">ваша скидка</div>
