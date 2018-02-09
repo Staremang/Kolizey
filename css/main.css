@@ -2364,7 +2364,6 @@ body {
   font-family: "Stem", sans-serif;
   font-size: 14px;
   background: #f4f4f4;
-  background: url(/img/rm/bg.jpg) top center;
 }
 .orange {
   color: #ffc600;
@@ -2731,7 +2730,8 @@ body {
   text-transform: uppercase;
 }
 .section-hero {
-  height: 1168px;
+  height: 115vh;
+  background: url(../img/bg-section-hero.jpg) center no-repeat;
   background-size: cover;
   color: white;
   position: relative;
@@ -2758,7 +2758,6 @@ body {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  display: none;
 }
 .section-hero__video-overlay {
   margin: auto;
@@ -2911,7 +2910,7 @@ body {
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  min-height: 1110px;
+  background: url(../img/step-bg-2.png) left center no-repeat, url(../img/bg-1.png) center top no-repeat;
 }
 .step-scale {
   display: -webkit-box;
@@ -3017,6 +3016,7 @@ body {
   width: 535px;
   margin-right: 36px;
   padding: 42px 45px 41px 41px;
+  background-color: #ffffff;
   -webkit-box-shadow: 0px 5px 11px 0px rgba(31, 29, 27, 0.04);
   box-shadow: 0px 5px 11px 0px rgba(31, 29, 27, 0.04);
 }
@@ -3182,6 +3182,7 @@ body {
 }
 .section-gallery {
   padding: 157px 0;
+  background: url(../img/bg-section-gallery.jpg) no-repeat;
 }
 .gallery__description {
   text-align: center;
@@ -3225,6 +3226,7 @@ body {
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  background: url(../img/bg-2.png) center no-repeat;
   background-size: 100% 100%;
   margin-top: -169px;
 }
@@ -3232,6 +3234,8 @@ body {
   position: relative;
 }
 .scheme-map {
+  background: url(../img/map.png) no-repeat;
+  background-size: contain;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -3405,6 +3409,8 @@ body {
   padding: 273px 0 190px;
   margin-top: -36px;
   margin-top: -210px;
+  background: url(../img/section-programs-bg.jpg) no-repeat;
+  background-size: cover;
 }
 .programs {
   margin-top: 52px;
@@ -3468,6 +3474,7 @@ body {
   z-index: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  background: #f4f4f4;
 }
 .section-guest-visit__container {
   position: relative;
@@ -3516,6 +3523,7 @@ body {
   transform: translateZ(0);
   -webkit-box-shadow: 0px 2px 20px 4px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 2px 20px 4px rgba(0, 0, 0, 0.05);
+  background: white;
   padding: 43px 78px 18px;
   margin-top: 69px;
 }
@@ -3577,6 +3585,8 @@ body {
   cursor: pointer;
 }
 .footer {
+  background: url(../img/footer-bg.jpg) center center no-repeat;
+  background-size: cover;
   padding: 225px 0 50px;
   margin-top: -125px;
 }
