@@ -309,42 +309,42 @@ if (typeof(jQuery) !== "undefined") {
 //		
 //		
 //		
-//		var popup = false;
-//		$('.popup').hide();
-//		
-//		
-//		function showPopup (el) {
-//			$('body').css('overflow', 'hidden');
-//			el.addClass('active');
-//			el.fadeIn();
-//			popup = true;
-//		}
-//		
-//		function hidePopup (el) {
-//			el.fadeOut();
-//			el.removeClass('active');
-//			$('body').css('overflow', 'auto');
-//			popup = false;
-//		}
-//		
-//		
-//		$('[data-popup]').click(function (e) {
-//			e.preventDefault();
-//			if (popup) {
-//				hidePopup($('.popup.active'));
-//			} else {
-//				showPopup($('#' + $(this).attr('data-popup')));
-//			}
-//		})
-//		
-//		$('.popup').click(function(e) {
-//			if ($(e.target).hasClass('popup')) {
-//				hidePopup($(this));
-//			}
-//		})
-//		$('.popup__btn-close').click(function () {
-//			hidePopup($(this).parent());
-//		})
+		var popup = false;
+		$('.popup').hide();
+		
+		
+		function showPopup (el) {
+			$('body').css('overflow', 'hidden');
+			el.addClass('active');
+			el.fadeIn();
+			popup = true;
+		}
+		
+		function hidePopup (el) {
+			el.fadeOut();
+			el.removeClass('active');
+			$('body').css('overflow', 'auto');
+			popup = false;
+		}
+		
+		
+		$('[data-popup]').click(function (e) {
+			e.preventDefault();
+			if (popup) {
+				hidePopup($('.popup.active'));
+			} else {
+				showPopup($('#' + $(this).attr('data-popup')));
+			}
+		})
+		
+		$('.popup').click(function(e) {
+			if ($(e.target).hasClass('popup')) {
+				hidePopup($(this));
+			}
+		})
+		$('.popup__btn-close').click(function () {
+			hidePopup($(this).parents('.popup'));
+		})
 //		
 //		
 //		$('form').on('submit', function (e) {
@@ -401,12 +401,118 @@ if (typeof(jQuery) !== "undefined") {
 //				}
 //			});
 //		})
+		
+		
+		// interview-form
+		// guest-visit-form
+		// call-me-form
+		// guest-visit-form-m
+		// thanks-and-gift-form
+		
 		$('form').on('submit', function (e) {
 			e.preventDefault();
 			var data = $(this).serialize();
 			
 			console.log(data);
+			
+			var id = $(this).attr('id');
+			
+			if (id == 'interview-form') {
+				showPopup ($('#thanks-and-gift'));
+				
+			} else if (id == 'guest-visit-form') {
+				showPopup ($('#thanks-and-gift'));
+				
+			} else if (id == 'call-me-form') {
+				hidePopup ($('#call-me'));
+				showPopup ($('#thanks'));
+				
+			} else if (id == 'guest-visit-form-m') {
+				hidePopup ($('#guest-visit-m'));
+				showPopup ($('#thanks-and-gift'));
+				
+			} else if (id == 'thanks-and-gift-form') {
+				
+			}
+//			
+//			$.ajax({
+//				type: "POST",
+//				url: url,
+//				data: data,
+////				beforeSend: function () {
+////					popupBlock.find('.popup-wrapper__btn').html('Отправка...');
+////				},
+//				error: function () {
+//					
+//				},
+//				success: function () {
+//					
+//				}
+//			});
 		});
+		
+		$('#bonus-1').show();
+		$('#interview-go-to-2').click(function () {
+			$('.step__item').removeClass('active');
+			$('#interview-step-2').addClass('active');
+			$('.step__discount-count').html('4000 р')
+			$('#bonus-2').show();
+			$('#step-scale-2').addClass('active');
+		})
+		$('#interview-go-to-3').click(function () {
+			$('.step__item').removeClass('active');
+			$('#interview-step-3').addClass('active');
+			$('.step__discount-count').html('6000 р')
+			$('#bonus-3').show();
+			$('#step-scale-3').addClass('active');
+		})
+		$('#interview-go-to-4').click(function () {
+			$('.step__item').removeClass('active');
+			$('#interview-step-4').addClass('active');
+			$('.step__discount-count').html('8000 р')
+			$('#bonus-4').show();
+			$('#step-scale-4').addClass('active');
+		})
+		$('#interview-go-to-5').click(function () {
+			$('.step__item').removeClass('active');
+			$('#interview-step-5').addClass('active');
+			$('.step__discount-count').html('10000 р')
+			$('#bonus-5').show();
+			$('#step-scale-5').addClass('active');
+		})
+		$('#interview-go-to-6').click(function () {
+			$('.step__item').removeClass('active');
+			$('#interview-step-6').addClass('active');
+		})
+		
+		$('.scheme-list__item').hover(
+			function() {
+				$('.scheme-map__pin[data-pin="' + $(this).attr('data-pin') + '"]').addClass('active');
+			},
+			function() {
+				$('.scheme-map__pin').removeClass('active');
+			}
+		);
+		
+		$('.scheme-map__pin').hover(
+			function() {
+				var el = $('.scheme-list__item[data-pin="' + $(this).attr('data-pin') + '"]'),
+					pos = el.position().top + $('.scheme-list__container').scrollTop() - 50;
+				
+				console.log(pos);
+				el.addClass('active');
+				$('.scheme-list__container').animate({ scrollTop: pos }, 500)
+			},
+			function() {
+				$('.scheme-list__item').removeClass('active');
+			}
+		)
+		$('.scheme-list__btn-up').click(function() {
+			$('.scheme-list__container').animate({ scrollTop: 0 }, 500);
+		})
+		$('.scheme-list__btn-down').click(function() {
+			$('.scheme-list__container').animate({ scrollTop: 700 }, 500);
+		})
 		
 		
 		$('a[data-anchor]').anchor({
@@ -421,6 +527,7 @@ if (typeof(jQuery) !== "undefined") {
 				nav: false,
 				navText: [ '', '' ],
 				items: 1,
+				autoHeight: true,
 //				autoWidth:true, 
 //				center:true,
 				onInitialized: sliderChange,

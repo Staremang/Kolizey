@@ -25,7 +25,7 @@
 				</span>
 			</button>
 			<div class="header-logo">
-				<img src="img/logo.png" alt="Колизей">
+<!--				<img src="img/logo.png" alt="Колизей">-->
 			</div>
 			<nav class="menu">
 				<a href="#" data-anchor class="menu__link active">Главная</a>
@@ -41,8 +41,9 @@
 					<span class="header-tel-link__tel">+7 (342) <span class="orange">233-11-22</span></span>
 				</a>
 
-				<a href="#" data-popup="callme" class="header-tel-link__order btn btn_orange-border">Заказать звонок</a>
+				<a href="#" data-popup="call-me" class="header-tel-link__order btn btn_orange-border">Заказать звонок</a>
 			</div>
+			<a href="tel:+7(342)233-11-22" class="header-tel-link-mobile"></a>
 		</div>
 		
 	</header>
@@ -60,7 +61,8 @@
 <!--		<div class="section-hero__video-overlay"></div>-->
 		
 		<div class="section-hero__block">
-			<h1 class="section-hero__description">СОЗДАЙТЕ ВАШУ ПЕРСОНАЛЬНУЮ ФИТНЕС-КАРТУ И ПОЛУЧИТЕ НА НЕЕ <span class="orange">СКИДКУ 10 000 РУБЛЕЙ</span></h1>
+			<h1 class="section-hero__description section-hero__description_d">СОЗДАЙТЕ ВАШУ ПЕРСОНАЛЬНУЮ ФИТНЕС-КАРТУ И ПОЛУЧИТЕ НА НЕЕ <span class="orange">СКИДКУ 10 000 РУБЛЕЙ</span></h1>
+			<h1 class="section-hero__description section-hero__description_m">СОЗДАЙТЕ ВАШУ ПЕРСОНАЛЬНУЮ КАРТУ И ПОЛУЧИТЕ НА НЕЕ <span class="orange">СКИДКУ 10 000 РУБЛЕЙ</span></h1>
 			<a href="#create-card" data-anchor class="section-hero__btn btn btn_orange-border">Создать карту</a>
 		</div>
 		<a href="#create-card" data-anchor class="section-hero__btn-next"></a>
@@ -70,29 +72,29 @@
 			<h1 class="section-title section-title_black"  id="create-card">Создайте свою клубную карту</h1>
 			<h2 class="section-subtitle">ВКЛЮЧАЙТЕ ТОЛЬКО ТЕ НАПРАВЛЕНИЯ, КОТОРЫЕ НЕОБХОДИМЫ ИМЕННО ВАМ</h2>
 			<div class="step-scale">
-				<div class="step-scale__step active">
+				<div class="step-scale__step active" id="step-scale-1">
 					<div class="step-scale__number">01</div>
 					<div class="step-scale__pin"></div>
 				</div>
-				<div class="step-scale__step">
+				<div class="step-scale__step" id="step-scale-2">
 					<div class="step-scale__number">02</div>
 					<div class="step-scale__pin"></div>
 				</div>
-				<div class="step-scale__step">
+				<div class="step-scale__step" id="step-scale-3">
 					<div class="step-scale__number">03</div>
 					<div class="step-scale__pin"></div>
 				</div>
-				<div class="step-scale__step">
+				<div class="step-scale__step" id="step-scale-4">
 					<div class="step-scale__number">04</div>
 					<div class="step-scale__pin"></div>
 				</div>
-				<div class="step-scale__step">
+				<div class="step-scale__step" id="step-scale-5">
 					<div class="step-scale__number">05</div>
 					<div class="step-scale__pin"></div>
 				</div>
 			</div>
 			<div class="step">
-				<form class="step__container">
+				<form class="step__container" id="interview-form">
 					<div class="step__item active" id="interview-step-1">
 						<div class="step__number">Вопрос №1</div>
 						<div class="step__title">Вы уже были в нашем клубе?</div>
@@ -107,7 +109,7 @@
 							</div>
 						</div>
 						<div class="step__bottom">
-							<button class="btn btn_orange">Продолжить опрос</button>
+							<button type="button" class="btn btn_orange" id="interview-go-to-2">Продолжить опрос</button>
 						</div>
 					</div>
 					<div class="step__item" id="interview-step-2">
@@ -128,7 +130,7 @@
 							</div>
 						</div>
 						<div class="step__bottom">
-							<button class="btn btn_orange">Продолжить опрос</button>
+							<button type="button" class="btn btn_orange" id="interview-go-to-3">Продолжить опрос</button>
 						</div>
 					</div>
 					<div class="step__item " id="interview-step-3">
@@ -149,7 +151,7 @@
 							</div>
 						</div>
 						<div class="step__bottom">
-							<button class="btn btn_orange">Продолжить опрос</button>
+							<button type="button" class="btn btn_orange" id="interview-go-to-4">Продолжить опрос</button>
 						</div>
 					</div>
 					<div class="step__item " id="interview-step-4">
@@ -170,7 +172,7 @@
 							</div>
 						</div>
 						<div class="step__bottom">
-							<button class="btn btn_orange">Продолжить опрос</button>
+							<button type="button" class="btn btn_orange" id="interview-go-to-5">Продолжить опрос</button>
 						</div>
 					</div>
 					<div class="step__item " id="interview-step-5">
@@ -231,20 +233,20 @@
 							</div>
 						</div>
 						<div class="step__bottom">
-							<button class="btn btn_orange">Продолжить опрос</button>
+							<button type="button" class="btn btn_orange" id="interview-go-to-6">Продолжить опрос</button>
 						</div>
 					</div>
 					<div class="step__item" id="interview-step-6">
 						<div class="step__title"><span class="orange">ВВЕДИТЕ ВАШи данные</span> ДЛЯ РЕЗЕРВИРОВАНИЯ СКИДКИ</div>
 						<div class="step__form">
 							<div class="step__input-group">
-								<input id="" type="text" class="step__input input-text" name="name" autocomplete="name" placeholder="Введите Ваше имя">
+								<input required id="6-step-name" type="text" class="step__input input-text" name="name" autocomplete="name" placeholder="Введите Ваше имя">
 							</div>
 							<div class="step__input-group">
-								<input id="" type="tel" class="step__input input-text" name="tel" autocomplete="tel" placeholder="Введите Ваш телефон">
+								<input required id="6-step-tel" type="tel" class="step__input input-text" name="tel" autocomplete="tel" placeholder="Введите Ваш телефон">
 							</div>
 							<div class="step__input-group">
-								<input id="" type="email" class="step__input input-text" name="email" autocomplete="email" placeholder="Введите Ваш E-Mail">
+								<input required id="6-step-email" type="email" class="step__input input-text" name="email" autocomplete="email" placeholder="Введите Ваш E-Mail">
 							</div>
 						</div>
 						<div class="step__bottom">
@@ -254,22 +256,23 @@
 					</div>
 				</form>
 				<div class="step__percent"></div>
+				<img src="img/girl.png" alt="" class="step__img">
 				<div class="step__your-discount">
 					<div class="step__discount-text">ваша скидка</div>
 					<div class="step__discount-count">2000 Р</div>
 					
 				</div>
 				<div class="bonus-text bonus-text_1"><span class="orange">+ бОнусы,</span> которые <br>уже ваши!</div>
-				<img src="img/girl.png" alt="" class="step__img">
 			</div>
 			<div class="bonuses">
 				<div class="bonuses__first-col">
-					<div class="bonuses__item">Персональные занятия в тренажерном зале</div>
-					<div class="bonuses__item">Персональные занятия по групповым направлениям</div>
+					<div class="bonuses__item" id="bonus-1">Персональные занятия в тренажерном зале</div>
+					<div class="bonuses__item" id="bonus-2">Персональные занятия по групповым направлениям</div>
+					<div class="bonuses__item" id="bonus-5">Гостевой визит для друга</div>
 				</div>
 				<div class="bonuses__second-col">
-					<div class="bonuses__item">Медицинское тестирование</div>
-					<div class="bonuses__item">Гостевой визит для друга</div>
+					<div class="bonuses__item" id="bonus-3">Медицинское тестирование</div>
+					<div class="bonuses__item" id="bonus-4">Консультация косметолога</div>
 				</div>
 			</div>
 		</div>
@@ -306,54 +309,54 @@
 			<h1 class="section-title section-title_black">схема клуба «Coliseum»</h1>
 			<h2 class="section-subtitle">здесь вы можете подробнее ознакомиться со схемой нашего клуба</h2>
 			<div class="scheme-map">
-				<div class="scheme-map__pin" style="left: 17.5%;top: 26.6%;"></div>
-				<div class="scheme-map__pin" style="left: 22.1%;top: 26.3%;"></div>
-				<div class="scheme-map__pin" style="left: 40.7%;top: 24.8%;"></div>
-				<div class="scheme-map__pin" style="left: 47.4%;top: 21.5%;"></div>
-				<div class="scheme-map__pin" style="left: 56.7%;top: 14.1%;"></div>
-				<div class="scheme-map__pin" style="left: 61.8%;top: 22.4%;"></div>
-				<div class="scheme-map__pin" style="left: 73.2%;top: 12.3%;"></div>
-				<div class="scheme-map__pin" style="left: 68.3%;top: 27.5%;"></div>
-				<div class="scheme-map__pin" style="left: 44.4%;top: 36.7%;"></div>
-				<div class="scheme-map__pin" style="left: 61.5%;top: 34.9%;"></div>
-				<div class="scheme-map__pin" style="left: 81%;top: 37.6%;"></div>
-				<div class="scheme-map__pin" style="left: 44.3%;top: 49.5%;"></div>
-				<div class="scheme-map__pin" style="left: 68.5%;top: 50.5%;"></div>
-				<div class="scheme-map__pin" style="left: 20.9%;top: 62.7%;"></div>
-				<div class="scheme-map__pin" style="left: 75.7%;top: 60.4%;"></div>
-				<div class="scheme-map__pin" style="left: 48.8%;top: 59.7%;"></div>
-				<div class="scheme-map__pin" style="left: 85.9%;top: 72.3%;"></div>
-				<div class="scheme-map__pin" style="left: 45.6%;top: 86%;"></div>
-				<div class="scheme-map__pin" style="left: 61.1%;top: 86.8%;"></div>
-				<div class="scheme-map__pin" style="left: 73.2%;top: 78.7%;"></div>
-				<div class="scheme-map__pin" style="left: 91.1%;top: 87.3%;"></div>
+				<div class="scheme-map__pin" data-pin="1" style="left: 17.5%;top: 26.6%;"></div>
+				<div class="scheme-map__pin" data-pin="2" style="left: 22.1%;top: 26.3%;"></div>
+				<div class="scheme-map__pin" data-pin="3" style="left: 40.7%;top: 24.8%;"></div>
+				<div class="scheme-map__pin" data-pin="4" style="left: 47.4%;top: 21.5%;"></div>
+				<div class="scheme-map__pin" data-pin="5" style="left: 56.7%;top: 14.1%;"></div>
+				<div class="scheme-map__pin" data-pin="6" style="left: 61.8%;top: 22.4%;"></div>
+				<div class="scheme-map__pin" data-pin="7" style="left: 73.2%;top: 12.3%;"></div>
+				<div class="scheme-map__pin" data-pin="8" style="left: 68.3%;top: 27.5%;"></div>
+				<div class="scheme-map__pin" data-pin="9" style="left: 44.4%;top: 36.7%;"></div>
+				<div class="scheme-map__pin" data-pin="10" style="left: 61.5%;top: 34.9%;"></div>
+				<div class="scheme-map__pin" data-pin="11" style="left: 81%;top: 37.6%;"></div>
+				<div class="scheme-map__pin" data-pin="12" style="left: 44.3%;top: 49.5%;"></div>
+				<div class="scheme-map__pin" data-pin="13" style="left: 68.5%;top: 50.5%;"></div>
+				<div class="scheme-map__pin" data-pin="14" style="left: 20.9%;top: 62.7%;"></div>
+				<div class="scheme-map__pin" data-pin="15" style="left: 75.7%;top: 60.4%;"></div>
+				<div class="scheme-map__pin" data-pin="16" style="left: 48.8%;top: 59.7%;"></div>
+				<div class="scheme-map__pin" data-pin="17" style="left: 85.9%;top: 72.3%;"></div>
+				<div class="scheme-map__pin" data-pin="18" style="left: 45.6%;top: 86%;"></div>
+				<div class="scheme-map__pin" data-pin="19" style="left: 61.1%;top: 86.8%;"></div>
+				<div class="scheme-map__pin" data-pin="20" style="left: 73.2%;top: 78.7%;"></div>
+				<div class="scheme-map__pin" data-pin="21" style="left: 91.1%;top: 87.3%;"></div>
 			</div>
 			<div class="scheme-list">
 				<div class="scheme-list__nav">
 					<button class="scheme-list__btn scheme-list__btn-up"></button>
 				</div>
 				<ul class="scheme-list__container">
-					<li class="scheme-list__item">детская комната</li>
-					<li class="scheme-list__item">зал групповых программ</li>
-					<li class="scheme-list__item">фитнес-бар</li>
-					<li class="scheme-list__item">салон красоты</li>
-					<li class="scheme-list__item">зал cycle</li>
-					<li class="scheme-list__item">отдел продаж</li>
-					<li class="scheme-list__item">тренажерный зал</li>
-					<li class="scheme-list__item">кабинет врача</li>
-					<li class="scheme-list__item">массажный кабинет</li>
-					<li class="scheme-list__item">зал единоборств</li>
-					<li class="scheme-list__item">зал бокса</li>
-					<li class="scheme-list__item">игровой зал</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
-					<li class="scheme-list__item">скалодром</li>
+					<li class="scheme-list__item" data-pin="17">детская комната</li>
+					<li class="scheme-list__item" data-pin="12">зал групповых программ</li>
+					<li class="scheme-list__item" data-pin="15">фитнес-бар</li>
+					<li class="scheme-list__item" data-pin="11">салон красоты</li>
+					<li class="scheme-list__item" data-pin="18">зал cycle</li>
+					<li class="scheme-list__item" data-pin="19">отдел продаж</li>
+					<li class="scheme-list__item" data-pin="14">тренажерный зал</li>
+					<li class="scheme-list__item" data-pin="10">кабинет врача</li>
+					<li class="scheme-list__item" data-pin="6">массажный кабинет</li>
+					<li class="scheme-list__item" data-pin="9">зал единоборств</li>
+					<li class="scheme-list__item" data-pin="3">зал бокса</li>
+					<li class="scheme-list__item" data-pin="5">игровой зал</li>
+					<li class="scheme-list__item" data-pin="7">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
+					<li class="scheme-list__item" data-pin="">скалодром</li>
 				</ul>
 				<div class="scheme-list__nav">
 					<button class="scheme-list__btn scheme-list__btn-down"></button>
@@ -363,32 +366,33 @@
 	</div>
 	<div class="section-programs">
 		<div class="container container-l">
-			<h1 class="section-title">направления групповых программ</h1>
+			<h1 class="section-programs__title-d section-title">направления групповых программ</h1>
+			<h1 class="section-programs__title-m section-title section-title_black">разнообразие групповых тренировок</h1>
 			<div class="programs">
 				<div class="row">
 					<div class="col-md-3">
 						<div class="programs__item programs__item_x2">
-							<div class="programs__bg"></div>
+							<div class="programs__bg" style="background-image: url(img/programs-1.jpg)"></div>
 							<div class="programs__title">АНТИГРАВИТИ ЙОГА</div>
 						</div>
 					</div>
 					<div class="col-md-9">
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-sm-6 col-md-4">
 								<div class="programs__item">
-									<div class="programs__bg"></div>
+									<div class="programs__bg" style="background-image: url(img/programs-2.jpg)"></div>
 									<div class="programs__title">единоборства</div>
 								</div>
 							</div>
-							<div class="col-md-8">
+							<div class="col-sm-6 col-md-8">
 								<div class="programs__item">
-									<div class="programs__bg"></div>
+									<div class="programs__bg" style="background-image: url(img/programs-3.jpg)"></div>
 									<div class="programs__title">Силовые тренировки</div>
 								</div>
 							</div>
-							<div class="col-md-8">
+							<div class="col-sm-6 col-md-8">
 								<div class="programs__item">
-									<div class="programs__bg"></div>
+									<div class="programs__bg" style="background-image: url(img/programs-4.jpg)"></div>
 									<div class="programs__title">Пилатес</div>
 								</div>
 							</div>
@@ -396,21 +400,21 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<div class="programs__item">
-							<div class="programs__bg"></div>
+							<div class="programs__bg" style="background-image: url(img/programs-5.jpg)"></div>
 							<div class="programs__title">игровые программы</div>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-sm-6 col-md-3">
 						<div class="programs__item">
-							<div class="programs__bg"></div>
+							<div class="programs__bg" style="background-image: url(img/programs-6.jpg)"></div>
 							<div class="programs__title">cycle</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="programs__item programs__item_ovarlay programs__item_x2">
-							<div class="programs__bg"></div>
+							<div class="programs__bg" style="background-image: url(img/programs-7.jpg)"></div>
 							<div class="programs__title">детские программы</div>
 						</div>
 					</div>
@@ -420,7 +424,7 @@
 	</div>
 	<div class="section-guest-visit">
 		<div class="section-guest-visit__container container">
-			<h1 class="section-guest-visit__title section-title section-title_left section-title_black">запишитесь на бесплатный гостевой визит</h1>
+			<h1 class="section-guest-visit__title section-title section-title_black">запишитесь на бесплатный гостевой визит</h1>
 			<div class="section-guest-visit__subtitle section-subtitle">что входит:</div>
 			<ul class="section-guest-visit__list">
 				<li class="section-guest-visit__list-item">Посещение тренажерного зала</li>
@@ -430,8 +434,11 @@
 				<li class="section-guest-visit__list-item">Выдача полотенца на тренировку</li>
 				<li class="section-guest-visit__list-item">Гостевой видят для друга/подруг</li>
 			</ul>
+			<button data-popup="guest-visit-m" class="section-guest-visit__btn-mobile btn btn_orange">записаться</button>
+			
+			
 			<img src="img/man-and-woman.png" alt="" class="section-guest-visit__man-and-woman">
-			<form action="" class="guest-visit-form">
+			<form class="guest-visit-form" id="guest-visit-form">
 				<input type="hidden" name="form-type" value="guest-visit-form">
 				<div class="row">
 					<div class="col-md-4">
@@ -468,12 +475,12 @@
 						<h1 class="footer__title section-title section-title_left ">Контакты</h1>
 						<div class="footer__contacts">
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-6">
 									<div class="footer__subtitle">адрес:</div>
 									<div class="footer__info">Ленина 60, ТРК</div>
 									<div class="footer__info">Колизей Атриум</div>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-6">
 									<div class="footer__subtitle">телефон:</div>
 									<div class="footer__info">
 										<a class="footer__info" href="">+7 (342) 233-11-22</a>
@@ -482,12 +489,12 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-6">
 									<div class="footer__subtitle">время работы:</div>
 									<div class="footer__info">Ежедневно</div>
 									<div class="footer__info">с 6:00 до 00:00</div>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-6">
 									<div class="footer__subtitle">мы в соц. сетях:</div>
 									<a href="" class="footer__social-btn footer__social-btn_vk"></a>
 									<a href="" class="footer__social-btn footer__social-btn_fb"></a>
@@ -514,156 +521,80 @@
 			</div>
 		</div>
 	</footer>
-<!--
-	<div class="section-about" id="about">
-		<img src="img/control-1.png" alt="" class="section-about__img-1">
-		<img src="img/control-2.png" alt="" class="section-about__img-2">
-		<div class="container">
-			<h1 class="section-about__title section-title">ПОЛНОЕ ПОГРУЖЕНИЕ</h1>
-			<p class="section-about__text">Технология  SteamVR  Tracking,  потрясающая  графика,  угол  обзора 110˚, интуитивно понятная система управления и сверхточная обратная связь - все это отвечает за создание непревзойденного уровня погружения в виртуальную реальность. Расстояние между линзами и от линз  до  экрана  регулируется  при  помощи  поворотных  регуляторов. </p>
-			<p class="section-about__text">Никаких  зазоров  между  лицом  и  шлемом  при надевании не остается, поэтому свет снаружи не проникает внутрь и не отвлекает от игры. Удобная система креплений дает возможность надежно и плотно разместить устройство  на голове. Пользователь видит качественную, высокодетализированную картинку  благодаря  разрешению  дисплеев 1200x1080.</p>
-		</div>
-	</div>
-	<div class="section-list" id="advantages">
-		<div class="container container-l">
-			<img src="img/htc-vive.png" alt="" class="section-list__hero-img">
-			<div class="row">
-				<div class="col-6 col-md-3">
-					<div class="section-list__img">
-						<img src="img/i-list-1.png" alt="">
-					</div>
-					<h4 class="section-list__title">Игровое пространство 100 кв.м.</h4>
-					<p class="section-list__text">3 игровые зоны с комфортной зоной ожидания</p>
-				</div>
-				<div class="col-6 col-md-3">
-					<div class="section-list__img">
-						<img src="img/i-list-2.png" alt="">
-					</div>
-					<h4 class="section-list__title">Лучшее оборудование «HTC Vive VR»</h4>
-					<p class="section-list__text">Полное погружение и взаимодействие с виртуальной реальностью</p>
-				</div>
-				<div class="col-6 col-md-3">
-					<div class="section-list__img">
-						<img src="img/i-list-3.png" alt="">
-					</div>
-					<h4 class="section-list__title">Уникальный интерьер с возможностью фотосессии</h4>
-					<p class="section-list__text">Окунитесь в атмосферу будущего</p>
-				</div>
-				<div class="col-6 col-md-3">
-					<div class="section-list__img">
-						<img src="img/i-list-4.png" alt="">
-					</div>
-					<h4 class="section-list__title">Более 100 игр на любой вкус</h4>
-					<p class="section-list__text">Самые актуальные новинки появляются у нас в кратчайшие сроки</p>
-				</div>
+	<div class="popup" id="call-me">
+		<form class="popup-wrapper" id="call-me-form">
+			<button type="button" class="popup__btn-close" title="Close (Esc)"></button>
+			<div class="popup-wrapper__title">Закажите звонок</div>
+			<div class="popup-wrapper__description">И наш менеджер свяжется с Вами в течение 5-и минут</div>
+			<div class="popup-wrapper__input-group">
+				<input type="text" autocomplete="name" name="name" class="popup-wrapper__input input-text" placeholder="Введите Ваше имя">
 			</div>
-		</div>
-	</div>
-	
-	<footer class="footer">
-		<div class="container container-l footer__container">
-			<div class="footer__logo">
-				<img src="img/logo-footer.png" alt="">
+			<div class="popup-wrapper__input-group">
+				<input type="tel" autocomplete="tel" name="tel" class="popup-wrapper__input input-text" placeholder="Введите Ваш телефон">
 			</div>
-			<div class="footer__nav">
-				<div class="footer__">
-					<a href="#about" data-anchor class="footer__link">О нас</a>
-					<a href="#reservation" data-anchor class="footer__link">Забронировать</a>
-				</div>
-				<div class="footer__">
-					<a href="#games" data-anchor class="footer__link">Игры</a>
-					<a href="#reviews" data-anchor class="footer__link">Отзывы</a>
-				</div>
-			</div>
-			<div class="footer__btn-block">
-				<a href="#reservation" data-anchor class="btn btn_large btn_white">Хочу поиграть!</a>
-			</div>
-		</div>
-	</footer>
-	
-	
-	<div class="popup" id="registration"> 
-		<button class="popup__btn-close fancybox-button fancybox-button--close" title="Close (Esc)"></button>
-		<form class="popup-wrapper">
-			<input type="hidden" name="type" value="registration">
-			<div class="popup-angle">
-				<img src="img/i-ticket-popup.png" alt="">
-			</div>
-			<div class="popup-wrapper__title">Запись на игру</div>
-			<div class="popup-wrapper__subtitle">Оставьте заявку и наш менеджер свяжется с Bами в течение 5-и минут</div>
-			<div class="popup-wrapper__select">
-				<div class="popup-wrapper__radio">
-					<input type="radio" id="promo-game" name="game-type" value="Промо-игра" required>
-					<label for="promo-game">Промо-игра</label>
-				</div>
-				<div class="popup-wrapper__radio">
-					<input type="radio" id="test-game" name="game-type" value="Тестовая игра" required>
-					<label for="test-game">тестовая игра</label>
-				</div>
-				<div class="popup-wrapper__radio">
-					<input type="radio" id="one-hour-of-play" name="game-type" value="1 час игры" required>
-					<label for="one-hour-of-play">1 час игры</label>
-				</div>
-			</div>
-			<div class="input-group">
-				<div class="input-field">
-					<label for="registration-name">Введите ваше имя</label>
-					<input data-custom-placeholder type="text" autocomplete="name" name="name" id="registration-name" class="input" required>
-				</div>
-			</div>
-			<div class="input-group no-gutters">
-				<div class="input-field">
-					<label for="registration-date">Дата</label>
-					<input type="text" name="date" id="registration-date" required>
-				</div>
-			</div>
-			<div class="input-group">
-				<div class="input-field">
-					<label for="registration-tel">Введите ваш телефон</label>
-					<input data-custom-placeholder type="tel" autocomplete="tel" class="input" name="tel" id="registration-tel" required>
-				</div>
-			</div>
-			<button type="submit" id="registration-submit" class="popup-wrapper__btn btn btn_large btn_white">Забронировать</button>
-			<img src="img/popup-img-0.png" alt="" class="popup-wrapper__img-0">
-			<img src="img/popup-img-1.png" alt="" class="popup-wrapper__img-1">
-			<img src="img/popup-img-2.png" alt="" class="popup-wrapper__img-2">
+			
+			
+			<input type="hidden" name="form-type" value="call-me">
+			<button type="submit" class="popup-wrapper__input btn btn_orange">заказать звонок</button>
 		</form>
 	</div>
-	<div class="popup" id="callme">
-		<button class="popup__btn-close fancybox-button fancybox-button--close" title="Close (Esc)"></button>
-		<form class="popup-wrapper">
-			<input type="hidden" name="type" value="callme">
-			<div class="popup-angle">
-				<img src="img/phone-popup.png" alt="">
+	<div class="popup" id="guest-visit-m">
+		<form class="popup-wrapper" id="guest-visit-form-m">
+			<button type="button" class="popup__btn-close" title="Close (Esc)"></button>
+			<div class="popup-wrapper__title">ГОСТЕВОЙ ВИЗИТ</div>
+			<div class="popup-wrapper__description">Запишитесь на бесплатный гостевой визит</div>
+			<div class="popup-wrapper__input-group">
+				<input type="text" required autocomplete="name" name="name" class="popup-wrapper__input input-text" placeholder="Введите Ваше имя">
 			</div>
-			<div class="popup-wrapper__title">закажите звонок</div>
-			<div class="popup-wrapper__subtitle">И наш менеджер свяжется с Bами в течение 5-и минут</div>
-			<div class="input-group">
-				<div class="input-field">
-					<label for="callme-name">Введите ваше имя</label>
-					<input data-custom-placeholder type="text" autocomplete="name" class="input" name="name" id="callme-name" required>
-				</div>
+			<div class="popup-wrapper__input-group">
+				<input type="tel" required autocomplete="tel" name="tel" class="popup-wrapper__input input-text" placeholder="Введите Ваш телефон">
 			</div>
-			<div class="input-group">
-				<div class="input-field">
-					<label for="callme-tel">Введите ваш телефон</label>
-					<input data-custom-placeholder type="tel" autocomplete="tel" class="input" name="tel" id="callme-tel" required>
-				</div>
+			<div class="popup-wrapper__input-group">
+				<input type="text" required name="time" class="popup-wrapper__input input-text" placeholder="Удобное время">
 			</div>
-			<div class="input-group">
-				<div class="input-field">
-					<label for="callme-email">Введите ваш E-mail</label>
-					<input data-custom-placeholder type="email" autocomplete="email" class="input" name="email" id="callme-email" required>
-				</div>
+			<div class="popup-wrapper__input-group">
+				<input  id="guest-visit-m__personal-data" type="checkbox" required name="personal-data" class="checkbox">
+				<label for="guest-visit-m__personal-data" class="">Я согласен на обработку персональных данных</label>
 			</div>
-			<button type="submit" class="popup-wrapper__btn btn btn_large btn_white" id="callme-submit">Заказать звонок</button>
-			<img src="img/popup-img-0.png" alt="" class="popup-wrapper__img-0">
-			<img src="img/popup-img-1.png" alt="" class="popup-wrapper__img-1">
-			<img src="img/popup-img-2.png" alt="" class="popup-wrapper__img-2">
+			
+			
+			<input type="hidden" name="form-type" value="guest-visit-form">
+			<button type="submit" class="popup-wrapper__input btn btn_orange">заказать звонок</button>
 		</form>
 	</div>
--->
-	
+	<div class="popup" id="thanks-and-gift">
+		<form class="popup-wrapper" id="thanks-and-gift-form">
+			<button type="button" class="popup__btn-close" title="Close (Esc)"></button>
+			<div class="popup-wrapper__title">Спасибо!</div>
+			<div class="popup-wrapper__description">
+				Ваша заявка отправлена!<br>
+				<br>
+				Вам предоставлен гостевой визит
+				для друга/подруги, подарите ему 
+				тренировку, заполнив форму ниже
+			</div>
+			<div class="popup-wrapper__checked"></div>
+			<div class="popup-wrapper__input-group">
+				<input type="text" autocomplete="off" name="name" class="popup-wrapper__input input-text" placeholder="Введите имя гостя">
+			</div>
+			<div class="popup-wrapper__input-group">
+				<input type="tel" autocomplete="off" name="tel" class="popup-wrapper__input input-text" placeholder="Введите телефон гостя">
+			</div>
+			
+			
+			<input type="hidden" name="form-type" value="gift">
+			<button type="submit" class="popup-wrapper__input btn btn_orange">подарить тренировку</button>
+		</form>
+	</div>
+	<div class="popup" id="thanks">
+		<div class="popup-wrapper">
+			<button type="button" class="popup__btn-close" title="Close (Esc)"></button>
+			<div class="popup-wrapper__title">Спасибо!</div>
+			<div class="popup-wrapper__description">Ваша заявка отправлена!</div>
+			<div class="popup-wrapper__checked"></div>
+			<div class="popup-wrapper__checked-text">В ближайшее время <br>мы с Вами свяжемся!</div>
+		</div>
+	</div>
 	<script>
 		var addr = "Пермь, Ленина 60";
 	</script>

@@ -20,8 +20,8 @@
 		-moz-backface-visibility: hidden;
 		/* fix firefox animation glitch */ 
 
-		display: flex;
-		align-items: center;
+//		display: flex;
+//		align-items: center;
 //		&:after {
 //			content: ".";
 //			display: block;
@@ -50,15 +50,15 @@
 .owl-carousel .owl-item {
 	position: relative;
 	min-height: 1px;
-//	float: left;
+	float: left;
 	-webkit-backface-visibility: hidden;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none; 
 }
-//  .owl-carousel .owl-item img {
-//    display: block;
-//    width: 100%; 
-//}
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; 
+}
 .owl-carousel .owl-nav.disabled,
 .owl-carousel .owl-dots.disabled {
 	display: none; 
@@ -208,6 +208,11 @@
 		margin-top: 10px; 
 	}
 	.owl-nav {
+		
+		display: none;
+		@media (min-width: @width-md) {
+			display: block;
+		}
 //		margin-top: 10px;
 		text-align: center;
 		position: absolute;
