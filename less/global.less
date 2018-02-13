@@ -1849,17 +1849,17 @@ img {
 }
 	.gallery-slider {
 		max-width: 500px;
-		min-height: 281px;
+		min-height: 194px;
 		left: 0;
 		right: 0;
 		margin: 10px auto 0;
 		
 		
-		@media (min-height: @height-sm) {
+		@media (min-height: @height-sm) and (min-width: @width-md) {
 			max-width: 700px;
 			min-height: 393px;
 		}
-		@media (min-height: @height-md) {
+		@media (min-height: @height-md) and (min-width: @width-md) {
 			max-width: 966px;
 			min-height: 543px;
 		}
