@@ -965,19 +965,24 @@ img {
 		}
 		
 	}
-//	&__video-overlay {
-//		margin: auto;
-//		position: absolute;
-//		min-width: 100%;
-//		min-height: 100%;
-//		top: 0;
-//		left: 0;
-//		width: 100%;
-//		height: 100%;
-//		background: black;
-//		opacity: .5; 
-//		
-//	}
+	&__video-overlay {
+		margin: auto;
+		position: absolute;
+		min-width: 100%;
+		min-height: 100%;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: black;
+		opacity: .5; 
+
+		display: none;
+		@media (min-width: @width-md) {
+			display: block;
+		}
+		
+	}
 	
 	&__description {
 		
