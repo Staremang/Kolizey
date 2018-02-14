@@ -438,7 +438,7 @@ if (typeof(jQuery) !== "undefined") {
 			nav: false,
 			navText: [ '', '' ],
 			items: 1,
-			autoHeight: true,
+//			autoHeight: true,
 //				autoWidth:true, 
 //				center:true,
 			onInitialized: sliderChange,
